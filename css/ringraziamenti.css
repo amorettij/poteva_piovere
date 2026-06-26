@@ -1,0 +1,113 @@
+/* =====================================================
+   RINGRAZIAMENTI PAGE — groups list
+   ===================================================== */
+
+.ringraziamenti-intro {
+  padding     : var(--sp-md) var(--gutter) var(--sp-lg);
+  max-width   : calc(55ch + var(--gutter) * 2);
+}
+
+.ringraziamenti-intro__text {
+  font-family : var(--f-body);
+  font-size   : clamp(1rem, 1.6vw, 1.25rem);
+  color       : var(--c-text);
+  line-height : 1.65;
+  opacity     : 0.8;
+}
+
+
+/* =====================================================
+   GROUPS LIST — editorial typographic list
+   ===================================================== */
+
+.groups-list {
+  list-style : none;
+  border-top : 1px solid rgba(26, 26, 26, 0.12);
+  padding-bottom: var(--sp-xl);
+}
+
+.groups-list__item {
+  border-bottom : 1px solid rgba(26, 26, 26, 0.12);
+}
+
+.groups-list__link {
+  display         : flex;
+  align-items     : baseline;
+  justify-content : space-between;
+  gap             : 2rem;
+  padding         : var(--sp-md) var(--gutter);
+  transition      : background-color 0.15s;
+  cursor          : pointer;
+}
+
+.groups-list__link:hover {
+  background-color: rgba(212, 75, 63, 0.04);
+}
+
+.groups-list__link:hover .groups-list__name {
+  color: var(--c-accent);
+}
+
+.groups-list__link:hover .groups-list__arrow {
+  transform: translateX(6px);
+}
+
+.groups-list__name {
+  font-family    : var(--f-display);
+  font-weight    : 100;
+  font-size      : clamp(2rem, 6vw, 7rem);
+  line-height    : 1;
+  color          : var(--c-text);
+  text-transform : uppercase;
+  letter-spacing : -0.01em;
+  transition     : color 0.2s;
+}
+
+.groups-list__right {
+  display     : flex;
+  align-items : baseline;
+  gap         : 1.5rem;
+  flex-shrink : 0;
+}
+
+.groups-list__count {
+  font-family    : var(--f-heading);
+  font-size      : 0.625rem;
+  text-transform : uppercase;
+  letter-spacing : 0.2em;
+  color          : var(--c-text);
+  opacity        : 0.4;
+  white-space    : nowrap;
+}
+
+.groups-list__arrow {
+  font-family : var(--f-body);
+  font-size   : clamp(1rem, 2vw, 1.5rem);
+  color       : var(--c-accent);
+  transition  : transform 0.2s;
+}
+
+
+/* =====================================================
+   ERROR / EMPTY STATE
+   ===================================================== */
+
+.ringraziamenti-error {
+  padding     : var(--sp-xl) var(--gutter);
+  font-family : var(--f-body);
+  font-size   : 1rem;
+  color       : var(--c-text);
+  opacity     : 0.5;
+  font-style  : italic;
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .groups-list__link,
+  .groups-list__name,
+  .groups-list__arrow { transition: none; }
+}

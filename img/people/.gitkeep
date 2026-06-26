@@ -1,0 +1,4 @@
+Drop B/W photos here. Naming convention: nome_iniziale1.jpg, nome_iniziale2.jpg
+Example: ivan_r1.jpg, ivan_r2.jpg
+
+Images are referenced from data/people.json → "image_files" array.

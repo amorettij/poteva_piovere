@@ -1,0 +1,9 @@
+Drop font files here to activate the full design system:
+
+  Extenda100-Regular.woff2   — hero & display text (Extenda 100)
+  OpenSauceOne-Regular.woff2 — body copy, regular (400)
+  OpenSauceOne-Medium.woff2  — body copy, medium (500)
+  OpenSauceOne-Bold.woff2    — body copy, bold (700)
+
+Without these files the site falls back to Bebas Neue (display) and DM Sans (body),
+both loaded from Google Fonts. Shrikhand is always served from Google Fonts.

@@ -1,0 +1,486 @@
+/* =====================================================
+   FONTS
+   Drop font files in /fonts/ to activate the design system.
+   Bebas Neue + DM Sans are Google Fonts fallbacks.
+   ===================================================== */
+
+@font-face {
+  font-family: 'Extenda';
+  src: url('../fonts/Extenda100-Regular.woff2') format('woff2'),
+       url('../fonts/Extenda100-Regular.woff')  format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sauce One';
+  src: url('../fonts/OpenSauceOne-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sauce One';
+  src: url('../fonts/OpenSauceOne-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sauce One';
+  src: url('../fonts/OpenSauceOne-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* =====================================================
+   DESIGN TOKENS
+   ===================================================== */
+
+:root {
+  --c-accent : #D44B3F;
+  --c-bg     : #F2EDE6;
+  --c-text   : #1A1A1A;
+
+  --f-display : 'Extenda', 'Bebas Neue', sans-serif;
+  --f-heading : 'Shrikhand', cursive;
+  --f-body    : 'Open Sauce One', 'DM Sans', system-ui, sans-serif;
+
+  --sp-xs : 0.5rem;
+  --sp-sm : 1rem;
+  --sp-md : 2rem;
+  --sp-lg : 4rem;
+  --sp-xl : 8rem;
+
+  --gutter     : clamp(1.5rem, 7vw, 7rem);
+  --nav-height : 4rem;
+}
+
+
+/* =====================================================
+   RESET
+   ===================================================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  background-color : var(--c-bg);
+  color            : var(--c-text);
+  font-family      : var(--f-body);
+  font-weight      : 400;
+  line-height      : 1.6;
+  overflow-x       : hidden;
+  -webkit-font-smoothing  : antialiased;
+  -moz-osx-font-smoothing : grayscale;
+}
+em  { font-style: italic; }
+strong { font-weight: 700; }
+a { color: inherit; text-decoration: none; }
+
+
+/* =====================================================
+   SITE NAV  (shared across all pages)
+   ===================================================== */
+
+.site-nav {
+  position        : fixed;
+  top             : 0;
+  left            : 0;
+  right           : 0;
+  z-index         : 100;
+  height          : var(--nav-height);
+  display         : flex;
+  align-items     : center;
+  justify-content : space-between;
+  padding         : 0 var(--gutter);
+  background-color: transparent;
+  transition      : background-color 0.35s, box-shadow 0.35s;
+}
+
+.site-nav--solid {
+  background-color: var(--c-bg);
+  box-shadow      : 0 1px 0 rgba(26, 26, 26, 0.08);
+}
+
+.site-nav__logo {
+  font-family    : var(--f-heading);
+  font-size      : 0.75rem;
+  text-transform : uppercase;
+  letter-spacing : 0.16em;
+  color          : var(--c-text);
+  transition     : color 0.2s;
+}
+
+.site-nav__logo:hover { color: var(--c-accent); }
+
+.site-nav__link {
+  font-family    : var(--f-heading);
+  font-size      : 0.625rem;
+  text-transform : uppercase;
+  letter-spacing : 0.2em;
+  color          : var(--c-text);
+  border-bottom  : 1px solid var(--c-accent);
+  padding-bottom : 1px;
+  transition     : color 0.2s;
+}
+
+.site-nav__link:hover { color: var(--c-accent); }
+
+
+/* =====================================================
+   SHARED UTILITIES
+   ===================================================== */
+
+.section-label {
+  display        : block;
+  font-family    : var(--f-heading);
+  font-size      : 0.625rem;
+  text-transform : uppercase;
+  letter-spacing : 0.22em;
+  color          : var(--c-accent);
+  margin-bottom  : var(--sp-md);
+}
+
+/* Breadcrumb (group.html) */
+.breadcrumb {
+  padding-top  : calc(var(--nav-height) + var(--sp-md));
+  padding-left : var(--gutter);
+}
+
+.breadcrumb__link {
+  font-family    : var(--f-heading);
+  font-size      : 0.625rem;
+  text-transform : uppercase;
+  letter-spacing : 0.18em;
+  color          : var(--c-text);
+  opacity        : 0.5;
+  transition     : opacity 0.2s;
+}
+
+.breadcrumb__link:hover { opacity: 1; }
+.breadcrumb__sep {
+  display        : inline-block;
+  margin         : 0 0.5rem;
+  opacity        : 0.3;
+  font-family    : var(--f-body);
+}
+.breadcrumb__current {
+  font-family    : var(--f-heading);
+  font-size      : 0.625rem;
+  text-transform : uppercase;
+  letter-spacing : 0.18em;
+  color          : var(--c-accent);
+}
+
+/* Shared page hero (ringraziamenti + group pages) */
+.page-hero {
+  padding    : var(--sp-lg) var(--gutter) var(--sp-md);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.page-hero--first {
+  padding-top: calc(var(--nav-height) + var(--sp-xl));
+}
+
+.page-hero__label { margin-bottom: var(--sp-sm); }
+
+.page-hero__title {
+  font-family    : var(--f-display);
+  font-weight    : 100;
+  font-size      : clamp(3.5rem, 10vw, 12rem);
+  line-height    : 0.9;
+  color          : var(--c-text);
+  text-transform : uppercase;
+  letter-spacing : -0.01em;
+}
+
+.page-hero__subtitle {
+  font-family : var(--f-body);
+  font-size   : clamp(0.875rem, 1.5vw, 1.125rem);
+  color       : var(--c-text);
+  opacity     : 0.6;
+  margin-top  : var(--sp-sm);
+  max-width   : 55ch;
+}
+
+
+/* =====================================================
+   HOMEPAGE — HERO
+   ===================================================== */
+
+.hero {
+  position        : relative;
+  height          : 100vh;
+  min-height      : 560px;
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  justify-content : center;
+  overflow        : hidden;
+}
+
+.hero__inner {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  gap            : var(--sp-md);
+  padding        : 0 var(--gutter);
+  text-align     : center;
+  z-index        : 1;
+}
+
+.hero__title {
+  font-family    : var(--f-display);
+  font-weight    : 100;
+  font-size      : clamp(5rem, 18vw, 20rem);
+  line-height    : 0.88;
+  color          : var(--c-text);
+  text-transform : uppercase;
+  letter-spacing : -0.01em;
+  will-change    : transform, opacity;
+}
+
+.hero__line {
+  width            : 64px;
+  height           : 2px;
+  background-color : var(--c-accent);
+  transform-origin : left center;
+  align-self       : center;
+}
+
+.hero__subtitle {
+  font-family    : var(--f-heading);
+  font-size      : clamp(0.75rem, 1.4vw, 1.125rem);
+  text-transform : uppercase;
+  letter-spacing : 0.14em;
+  color          : var(--c-accent);
+  max-width      : 40ch;
+  text-align     : center;
+}
+
+.hero__scroll-hint {
+  position        : absolute;
+  bottom          : var(--sp-lg);
+  left            : 50%;
+  transform       : translateX(-50%);
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  gap             : 0.75rem;
+}
+
+.hero__scroll-label {
+  font-family    : var(--f-heading);
+  font-size      : 0.625rem;
+  text-transform : uppercase;
+  letter-spacing : 0.22em;
+  color          : var(--c-text);
+  opacity        : 0.35;
+}
+
+.hero__scroll-line {
+  width      : 1px;
+  height     : 56px;
+  background : linear-gradient(to bottom, var(--c-accent), transparent);
+  animation  : scrollPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%,  100% { opacity: 0.25; transform: scaleY(0.6); }
+  50%        { opacity: 1;    transform: scaleY(1);   }
+}
+
+
+/* =====================================================
+   HOMEPAGE — QUOTE  (dark section)
+   ===================================================== */
+
+.section-quote {
+  position         : relative;
+  height           : 340vh;
+  background-color : var(--c-text);
+}
+
+.quote__sticky {
+  position        : sticky;
+  top             : 0;
+  height          : 100vh;
+  display         : flex;
+  flex-direction  : column;
+  justify-content : center;
+  padding         : var(--sp-lg) var(--gutter);
+  overflow        : hidden;
+}
+
+.quote__sticky::before {
+  content          : '';
+  position         : absolute;
+  left             : calc(var(--gutter) - 1.5rem);
+  top              : 18%;
+  bottom           : 18%;
+  width            : 2px;
+  background-color : var(--c-accent);
+  pointer-events   : none;
+}
+
+@media (max-width: 600px) {
+  .quote__sticky::before { display: none; }
+}
+
+.quote__meta {
+  display        : flex;
+  flex-direction : column;
+  gap            : 0.2rem;
+  margin-bottom  : var(--sp-md);
+}
+
+.quote__label {
+  font-family    : var(--f-heading);
+  font-size      : 0.625rem;
+  text-transform : uppercase;
+  letter-spacing : 0.22em;
+  color          : var(--c-accent);
+}
+
+.quote__source {
+  font-family : var(--f-body);
+  font-size   : 0.8125rem;
+  color       : var(--c-bg);
+  opacity     : 0.4;
+}
+
+.quote__body {
+  max-width  : 64ch;
+  list-style : none;
+}
+
+.quote__phrase {
+  font-family   : var(--f-body);
+  font-size     : clamp(1.125rem, 2.4vw, 1.875rem);
+  line-height   : 1.45;
+  color         : var(--c-bg);
+  margin-bottom : 0.6em;
+  opacity       : 0;
+  will-change   : opacity, transform;
+}
+
+.quote__phrase--final {
+  color       : var(--c-accent);
+  font-weight : 700;
+}
+
+
+/* =====================================================
+   HOMEPAGE — PLACEHOLDER SECTIONS
+   ===================================================== */
+
+.section-placeholder {
+  min-height : 60vh;
+  display    : flex;
+  flex-direction: column;
+  justify-content: center;
+  padding    : var(--sp-xl) var(--gutter);
+  border-top : 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.placeholder__inner {
+  max-width : 720px;
+}
+
+.placeholder__body {
+  font-family : var(--f-body);
+  font-size   : clamp(1rem, 1.6vw, 1.25rem);
+  color       : var(--c-text);
+  opacity     : 0.45;
+  font-style  : italic;
+  margin-top  : var(--sp-sm);
+}
+
+/* =====================================================
+   HOMEPAGE — ACK CTA
+   ===================================================== */
+
+.section-ack-cta {
+  min-height      : 100vh;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  padding         : var(--sp-xl) var(--gutter);
+  border-top      : 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.ack-cta__inner {
+  text-align : center;
+  display    : flex;
+  flex-direction : column;
+  align-items    : center;
+  gap        : var(--sp-md);
+  max-width  : 800px;
+}
+
+.ack-cta__pre {
+  font-family : var(--f-body);
+  font-size   : clamp(1rem, 1.8vw, 1.25rem);
+  color       : var(--c-text);
+  opacity     : 0.6;
+  font-style  : italic;
+  will-change : opacity, transform;
+}
+
+.ack-cta__title {
+  font-family    : var(--f-display);
+  font-weight    : 100;
+  font-size      : clamp(3.5rem, 12vw, 13rem);
+  line-height    : 0.88;
+  color          : var(--c-text);
+  text-transform : uppercase;
+  letter-spacing : -0.01em;
+  will-change    : opacity, transform;
+}
+
+.ack-cta__link {
+  display        : inline-flex;
+  align-items    : center;
+  gap            : 0.75rem;
+  font-family    : var(--f-heading);
+  font-size      : 0.75rem;
+  text-transform : uppercase;
+  letter-spacing : 0.2em;
+  color          : var(--c-bg);
+  background     : var(--c-accent);
+  padding        : 0.875rem 2rem;
+  will-change    : opacity, transform;
+  transition     : background-color 0.2s;
+}
+
+.ack-cta__link:hover { background-color: var(--c-text); }
+
+.ack-cta__arrow {
+  display        : inline-block;
+  transition     : transform 0.2s;
+}
+
+.ack-cta__link:hover .ack-cta__arrow { transform: translateX(4px); }
+
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+:focus-visible {
+  outline        : 2px solid var(--c-accent);
+  outline-offset : 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll-line { animation: none; opacity: 0.6; }
+  .quote__phrase,
+  .ack-cta__pre, .ack-cta__title, .ack-cta__link {
+    opacity: 1 !important; transform: none !important;
+  }
+}

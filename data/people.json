@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "group_order": ["Family", "Sorry for Ivan Crew", "Liceo", "Triennale", "Magistrale", "Master"],
+    "note": "Chiave: nome_inizialedelmcognome. Immagini in img/people/. Sostituire i segnaposto con i dati reali."
+  },
+
+  "mamma_r": {
+    "group": "Family",
+    "image_files": ["mamma_r1"],
+    "quote": "Inserisci qui una citazione.",
+    "ackn_text": "Inserisci qui il testo di ringraziamento per questa persona. Può essere lungo quanto desideri."
+  },
+  "papa_m": {
+    "group": "Family",
+    "image_files": ["papa_m1", "papa_m2"],
+    "quote": "Inserisci qui una citazione.",
+    "ackn_text": "Inserisci qui il testo di ringraziamento per questa persona."
+  },
+
+  "ivan_r": {
+    "group": "Sorry for Ivan Crew",
+    "image_files": ["ivan_r1"],
+    "quote": "Inserisci qui una citazione.",
+    "ackn_text": "Inserisci qui il testo di ringraziamento per Ivan."
+  },
+  "marco_b": {
+    "group": "Sorry for Ivan Crew",
+    "image_files": ["marco_b1", "marco_b2"],
+    "quote": "Inserisci qui una citazione.",
+    "ackn_text": "Inserisci qui il testo di ringraziamento."
+  },
+  "sara_v": {
+    "group": "Sorry for Ivan Crew",
+    "image_files": ["sara_v1"],
+    "quote": "Inserisci qui una citazione.",
+    "ackn_text": "Inserisci qui il testo di ringraziamento."
+  },
+
+  "chiara_m": {
+    "group": "Liceo",
+    "image_files": ["chiara_m1"],
+    "quote": "Inserisci qui una citazione.",
+    "ackn_text": "Inserisci qui il testo di ringraziamento."
+  },
+  "luca_f": {
+    "group": "Liceo",
+    "image_files": ["luca_f1", "luca_f2"],
+    "quote": "Inserisci qui una citazione.",
+    "ackn_text": "Inserisci qui il testo di ringraziamento."
+  },
+
+  "sofia_b": {
+    "group": "Triennale",
+    "image_files": ["sofia_b1"],
+    "quote": "Inserisci qui una citazione.",
+    "ackn_text": "Inserisci qui il testo di ringraziamento."
+  },
+  "matteo_c": {
+    "group": "Triennale",
+    "image_files": ["matteo_c1"],
+    "quote": "Inserisci qui una citazione.",
+    "ackn_text": "Inserisci qui il testo di ringraziamento."
+  },
+
+  "giulia_p": {
+    "group": "Magistrale",
+    "image_files": ["giulia_p1"],
+    "quote": "Inserisci qui una citazione.",
+    "ackn_text": "Inserisci qui il testo di ringraziamento."
+  },
+  "andrea_t": {
+    "group": "Magistrale",
+    "image_files": ["andrea_t1", "andrea_t2"],
+    "quote": "Inserisci qui una citazione.",
+    "ackn_text": "Inserisci qui il testo di ringraziamento."
+  },
+
+  "elena_r": {
+    "group": "Master",
+    "image_files": ["elena_r1"],
+    "quote": "Inserisci qui una citazione.",
+    "ackn_text": "Inserisci qui il testo di ringraziamento."
+  },
+  "davide_s": {
+    "group": "Master",
+    "image_files": ["davide_s1"],
+    "quote": "Inserisci qui una citazione.",
+    "ackn_text": "Inserisci qui il testo di ringraziamento."
+  }
+}
