@@ -81,42 +81,59 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════
-       INTRO  (placeholder — aggiungere testo del dottorato)
+       LANDING CAROUSEL
   ═══════════════════════════════════════════════════ -->
-  <section class="section-placeholder" id="intro" aria-label="Introduzione">
-    <div class="placeholder__inner">
-      <span class="section-label">IL DOTTORATO</span>
-      <!-- PLACEHOLDER: sostituire con il testo introduttivo del dottorato -->
-      <p class="placeholder__body">
-        Questa sezione accoglierà la narrazione del dottorato.
-        Aggiungi qui il tuo testo introduttivo.
-      </p>
+  <section class="section-lc" aria-label="Galleria">
+    <div class="lc__viewport">
+      <div class="lc__track" id="lc-track">
+        <div class="lc__slide"><img src="img/landing_page/1.png" alt=""></div>
+        <div class="lc__slide"><img src="img/landing_page/2.png" alt=""></div>
+      </div>
     </div>
+    <div class="lc__dots" id="lc-dots" aria-hidden="true"></div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════
-       TIMELINE  (placeholder)
+       TIMELINE
   ═══════════════════════════════════════════════════ -->
-  <section class="section-placeholder" id="timeline" aria-label="Percorso">
-    <div class="placeholder__inner">
+  <section class="section-timeline" id="timeline" aria-label="Il percorso del dottorato">
+    <div class="timeline__inner">
       <span class="section-label">IL PERCORSO</span>
-      <!-- PLACEHOLDER: inserire la timeline del dottorato -->
-      <p class="placeholder__body">
-        La timeline del dottorato — anni, tappe, svolte — verrà costruita qui.
-      </p>
+      <div class="timeline__list" id="timeline-list" role="list" aria-label="Tappe del dottorato">
+        <!-- populated by timeline.js -->
+      </div>
+      <noscript>
+        <p style="margin-top:1rem;opacity:0.45;font-style:italic">
+          Abilita JavaScript per vedere la timeline del dottorato.
+        </p>
+      </noscript>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════
-       QUOTES  (placeholder)
+       COME MI LASCIA QUESTO PHD
   ═══════════════════════════════════════════════════ -->
-  <section class="section-placeholder" id="citazioni" aria-label="Citazioni">
-    <div class="placeholder__inner">
-      <span class="section-label">LE PAROLE</span>
-      <!-- PLACEHOLDER: inserire citazioni significative del percorso -->
-      <p class="placeholder__body">
-        Le citazioni che hanno segnato il percorso saranno raccolte qui.
-      </p>
+  <section class="section-lascia" id="lascia" aria-label="Come mi lascia questo PhD">
+    <div class="lascia__inner">
+      <span class="section-label" id="lascia-label">COME MI LASCIA QUESTO PHD</span>
+
+      <div class="lascia__carousel" role="region" aria-label="Galleria immagini">
+        <div class="carousel__stage">
+          <button class="carousel__btn carousel__btn--prev" id="carousel-prev" type="button" aria-label="Immagine precedente">←</button>
+          <div class="carousel__viewport">
+            <div class="carousel__track" id="carousel-track">
+              <!-- slides populated by timeline.js -->
+            </div>
+          </div>
+          <button class="carousel__btn carousel__btn--next" id="carousel-next" type="button" aria-label="Immagine successiva">→</button>
+        </div>
+        <div class="carousel__dots" id="carousel-dots" aria-hidden="true"></div>
+      </div>
+
+      <blockquote class="lascia__quote" id="lascia-quote">
+        <p class="lascia__quote-text" id="lascia-quote-text"></p>
+        <cite class="lascia__quote-source" id="lascia-quote-source"></cite>
+      </blockquote>
     </div>
   </section>
 
@@ -151,5 +168,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/main.js"></script>
+  <script src="js/timeline.js"></script>
 </body>
 </html>
