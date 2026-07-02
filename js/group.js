@@ -33,7 +33,7 @@
   let data, imgManifest;
   try {
     const [res, imgRes] = await Promise.all([
-      fetch('data/people.json?v=19'),
+      fetch('data/people.json?v=26'),
       fetch('data/images.json?v=12')
     ]);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
