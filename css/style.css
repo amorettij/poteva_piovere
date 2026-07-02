@@ -138,10 +138,12 @@ a { color: inherit; text-decoration: none; }
 
 .section-label {
   display        : block;
-  font-family    : var(--f-heading);
-  font-size      : clamp(0.75rem, 1.4vw, 1.125rem);
+  font-family    : var(--f-display);
+  font-weight    : 100;
+  font-size      : clamp(2rem, 4.5vw, 4rem);
   text-transform : uppercase;
-  letter-spacing : 0.18em;
+  letter-spacing : 0.04em;
+  line-height    : 1;
   color          : var(--c-accent);
   margin-bottom  : var(--sp-md);
 }
@@ -400,6 +402,361 @@ a { color: inherit; text-decoration: none; }
   font-style  : italic;
   margin-top  : var(--sp-sm);
 }
+
+/* =====================================================
+   HOMEPAGE — SEZIONE DATI (accordion)
+   ===================================================== */
+
+.section-dati {
+  border-top : 1px solid rgba(26, 26, 26, 0.1);
+}
+
+/* Intro */
+.dati__intro {
+  padding   : var(--sp-xl) var(--gutter);
+  max-width : 860px;
+}
+
+.dati__intro-text {
+  font-family : var(--f-body);
+  font-size   : clamp(1.05rem, 2vw, 1.4rem);
+  line-height : 1.65;
+  color       : var(--c-text);
+  max-width   : 62ch;
+  margin-top  : var(--sp-md);
+}
+
+.dati__intro-subtext {
+  font-family : var(--f-body);
+  font-size   : 0.85rem;
+  line-height : 1.55;
+  color       : rgba(26, 26, 26, 0.5);
+  max-width   : 62ch;
+  margin-top  : var(--sp-sm);
+}
+
+.dati__link {
+  color           : var(--c-accent);
+  border-bottom   : 1px solid currentColor;
+  text-decoration : none;
+  transition      : opacity 0.2s;
+}
+.dati__link:hover { opacity: 0.7; }
+
+/* ── Accordion ─────────────────────────────────────── */
+.dati__accordion {
+  border-top : 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.dati__item {
+  border-bottom : 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.dati__item-toggle {
+  width           : 100%;
+  display         : flex;
+  align-items     : center;
+  justify-content : space-between;
+  gap             : var(--sp-md);
+  padding         : var(--sp-md) var(--gutter);
+  background      : none;
+  border          : none;
+  cursor          : pointer;
+  text-align      : left;
+  transition      : background-color 0.15s;
+}
+
+.dati__item-toggle:hover {
+  background-color : rgba(212, 75, 63, 0.03);
+}
+
+.dati__item-title {
+  font-family    : var(--f-display);
+  font-weight    : 100;
+  font-size      : clamp(1.6rem, 4.5vw, 3.5rem);
+  text-transform : uppercase;
+  letter-spacing : -0.01em;
+  line-height    : 1;
+  color          : var(--c-text);
+  transition     : color 0.2s;
+}
+
+.dati__item-toggle:hover .dati__item-title,
+.dati__item.is-open    .dati__item-title {
+  color : var(--c-accent);
+}
+
+.dati__item-icon {
+  width            : 32px;
+  height           : 32px;
+  border-radius    : 50%;
+  border           : 1px solid var(--c-accent);
+  color            : var(--c-accent);
+  display          : flex;
+  align-items      : center;
+  justify-content  : center;
+  font-size        : 1.25rem;
+  font-weight      : 300;
+  flex-shrink      : 0;
+  line-height      : 1;
+  transition       : transform 0.3s ease, background-color 0.2s, color 0.2s;
+}
+
+.dati__item-icon::before { content: '+'; }
+
+.dati__item.is-open .dati__item-icon {
+  transform        : rotate(45deg);
+  background-color : var(--c-accent);
+  color            : var(--c-bg);
+}
+
+/* Collapsible body */
+.dati__item-body {
+  display             : grid;
+  grid-template-rows  : 0fr;
+  transition          : grid-template-rows 0.45s ease;
+}
+
+.dati__item.is-open .dati__item-body {
+  grid-template-rows : 1fr;
+}
+
+.dati__item-inner {
+  overflow : hidden;
+}
+
+.dati__item-content {
+  padding : var(--sp-lg) var(--gutter) var(--sp-xl);
+}
+
+/* ── Counter panel ──────────────────────────────────── */
+.dati__counter-panel {
+  background      : var(--c-text);
+  padding         : var(--sp-xl) var(--sp-lg);
+  min-height      : 50vh;
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  justify-content : center;
+  text-align      : center;
+}
+
+.dati__question {
+  font-family    : var(--f-heading);
+  font-size      : clamp(0.8rem, 1.8vw, 1.1rem);
+  text-transform : uppercase;
+  letter-spacing : 0.12em;
+  color          : var(--c-bg);
+  opacity        : 0.55;
+  margin-bottom  : var(--sp-md);
+}
+
+.dati__counter-number {
+  font-family    : var(--f-display);
+  font-weight    : 100;
+  font-size      : clamp(9rem, 28vw, 22rem);
+  line-height    : 0.88;
+  color          : var(--c-accent);
+  letter-spacing : -0.02em;
+}
+
+.dati__counter-label {
+  font-family    : var(--f-heading);
+  font-size      : clamp(0.7rem, 1.4vw, 0.9rem);
+  text-transform : uppercase;
+  letter-spacing : 0.22em;
+  color          : var(--c-bg);
+  opacity        : 0.38;
+  margin-top     : var(--sp-sm);
+}
+
+/* ── Bar chart ──────────────────────────────────────── */
+.dati__bar-chart {
+  display   : block;
+  width     : 100%;
+  max-width : 660px;
+  height    : auto;
+}
+
+.dati__bar-chart text { font-family: var(--f-body); }
+
+/* ── Slot machine (mese) ────────────────────────────── */
+.dati__slot-wrap   { margin-top: var(--sp-lg); }
+
+.dati__slot-prefix {
+  font-family    : var(--f-heading);
+  font-size      : clamp(0.75rem, 1.4vw, 0.9rem);
+  text-transform : uppercase;
+  letter-spacing : 0.16em;
+  color          : var(--c-text);
+  opacity        : 0.55;
+  margin-bottom  : var(--sp-xs);
+}
+
+.dati__slot-machine {
+  overflow   : hidden;
+  height     : 0;
+}
+
+.dati__slot-reel {
+  display        : flex;
+  flex-direction : column;
+  will-change    : transform;
+}
+
+.dati__slot-item {
+  font-family    : var(--f-display);
+  font-weight    : 100;
+  font-size      : clamp(3rem, 9vw, 6.5rem);
+  line-height    : 1.05;
+  color          : var(--c-accent);
+  text-transform : uppercase;
+  letter-spacing : -0.01em;
+  padding        : 0.05em 0;
+  display        : block;
+}
+
+/* ── Donut chart ────────────────────────────────────── */
+.dati__donut-wrap {
+  display     : flex;
+  align-items : flex-start;
+  gap         : var(--sp-lg);
+  flex-wrap   : wrap;
+}
+
+.dati__donut-chart {
+  width      : 260px;
+  height     : 260px;
+  flex-shrink: 0;
+}
+
+.dati__donut-legend {
+  flex       : 1;
+  min-width  : 200px;
+  align-self : center;
+}
+
+.dati__legend-item {
+  display       : flex;
+  align-items   : center;
+  gap           : 0.7rem;
+  padding       : 0.55rem 0;
+  border-bottom : 1px solid rgba(26, 26, 26, 0.07);
+}
+
+.dati__legend-item:last-child { border-bottom: none; }
+
+.dati__legend-dot {
+  width         : 10px;
+  height        : 10px;
+  border-radius : 50%;
+  flex-shrink   : 0;
+}
+
+.dati__legend-label {
+  font-family : var(--f-body);
+  font-size   : clamp(0.8rem, 1.1vw, 0.9rem);
+  color       : var(--c-text);
+  flex        : 1;
+}
+
+.dati__legend-count {
+  font-family : var(--f-display);
+  font-weight : 100;
+  font-size   : 1.2rem;
+  color       : var(--c-accent);
+  min-width   : 2ch;
+  text-align  : right;
+}
+
+/* ── Line chart ─────────────────────────────────────── */
+.dati__line-chart {
+  display   : block;
+  width     : 100%;
+  max-width : 760px;
+  height    : auto;
+}
+
+.dati__line-chart text { font-family: var(--f-body); }
+
+/* ── Calendario roulette ────────────────────────────── */
+.dati__cal-wrap {
+  margin-top : var(--sp-xl);
+}
+
+.dati__cal-label {
+  font-family    : var(--f-heading);
+  font-size      : clamp(0.7rem, 1.3vw, 0.85rem);
+  text-transform : uppercase;
+  letter-spacing : 0.16em;
+  color          : var(--c-text);
+  opacity        : 0.5;
+  margin-bottom  : var(--sp-sm);
+}
+
+.dati__cal {
+  display          : inline-flex;
+  gap              : 0;
+  background-color : rgba(26, 26, 26, 0.06);
+  padding          : var(--sp-sm) var(--sp-md);
+  border-radius    : 4px;
+}
+
+.dati__cal-slot {
+  overflow : hidden;
+  height   : 0; /* set by JS */
+}
+
+#cal-day-slot {
+  width        : clamp(90px, 14vw, 130px);
+  padding-right: var(--sp-sm);
+}
+#cal-month-slot {
+  width       : clamp(180px, 35vw, 320px);
+  padding-left: var(--sp-sm);
+  border-left : 1px solid rgba(26, 26, 26, 0.15);
+}
+
+.dati__cal-reel {
+  display        : flex;
+  flex-direction : column;
+  will-change    : transform;
+}
+
+.dati__cal-item {
+  font-family    : var(--f-display);
+  font-weight    : 100;
+  text-transform : uppercase;
+  color          : var(--c-accent);
+  text-align     : center;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  height         : clamp(4rem, 10vw, 7rem);
+  letter-spacing : -0.01em;
+}
+
+#cal-day-slot   .dati__cal-item { font-size: clamp(2.5rem, 7vw, 5rem); }
+#cal-month-slot .dati__cal-item { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+
+/* ── Comment ────────────────────────────────────────── */
+.dati__comment {
+  font-family : var(--f-body);
+  font-size   : clamp(0.875rem, 1.3vw, 1.05rem);
+  color       : var(--c-text);
+  opacity     : 0.65;
+  font-style  : italic;
+  margin-top  : var(--sp-lg);
+  max-width   : 68ch;
+  line-height : 1.7;
+}
+
+@media (max-width: 600px) {
+  .dati__donut-wrap   { flex-direction: column; }
+  .dati__donut-chart  { width: 220px; height: 220px; margin: 0 auto; }
+  .dati__item-content { padding: var(--sp-md) var(--gutter) var(--sp-lg); }
+}
+
 
 /* =====================================================
    HOMEPAGE — ACK CTA

@@ -37,7 +37,7 @@
     <div class="hero__inner">
       <h1 class="hero__title">POTEVA<br>PIOVERE</h1>
       <div class="hero__line" aria-hidden="true"></div>
-      <p class="hero__subtitle">La storia di un dottorato</p>
+      <p class="hero__subtitle">Come è andato questo dottorato?<br>(2023-2026)</p>
     </div>
     <div class="hero__scroll-hint" aria-hidden="true">
       <span class="hero__scroll-label">scorri</span>
@@ -111,6 +111,118 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════
+       DATA VIZ — accordion
+  ═══════════════════════════════════════════════════ -->
+  <section class="section-dati" id="dati" aria-label="Dati statistici">
+
+    <div class="dati__intro">
+      <span class="section-label">I DATI</span>
+      <p class="dati__intro-text">
+        Nel 2024 — anno centrale di questo percorso — un gruppo scelto di
+        <a class="dati__link" href="group.html?group=le_ragazze_non_piangono_mai">ragazze che non piangono mai</a>
+        ha raccolto dei preziosi dati statistici sulle volte in cui la regola è stata infranta. Nel rispetto della loro privacy, riporto di seguito solo la parte relativa alla mia personalissima performance.
+      </p>
+      <p class="dati__intro-subtext">
+        Se sei membro del gruppo <a class="dati__link" href="lrnpm.html">Le ragazze non piangono mai</a>, prosegui alla pagina dedicata per scoprire classifiche e statistiche di insieme.
+      </p>
+    </div>
+
+    <div class="dati__accordion">
+
+      <!-- 1 — Quanto ho pianto? -->
+      <div class="dati__item">
+        <button class="dati__item-toggle" aria-expanded="false">
+          <span class="dati__item-title">Quanto ho pianto?</span>
+          <span class="dati__item-icon" aria-hidden="true"></span>
+        </button>
+        <div class="dati__item-body">
+          <div class="dati__item-inner">
+            <div class="dati__item-content">
+              <div class="dati__counter-panel" id="dati-counter">
+                <p class="dati__question">Dunque, quante volte ho pianto nel 2024?</p>
+                <p class="dati__counter-number" id="counter-number" aria-live="polite">0</p>
+                <p class="dati__counter-label">volte</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 — Quando ho pianto? -->
+      <div class="dati__item">
+        <button class="dati__item-toggle" aria-expanded="false">
+          <span class="dati__item-title">Quando ho pianto?</span>
+          <span class="dati__item-icon" aria-hidden="true"></span>
+        </button>
+        <div class="dati__item-body">
+          <div class="dati__item-inner">
+            <div class="dati__item-content" id="dati-bar">
+              <svg class="dati__bar-chart" id="bar-chart-svg"
+                   viewBox="0 0 600 260" role="img" aria-label="Piantini per mese 2024"></svg>
+              <div class="dati__slot-wrap">
+                <p class="dati__slot-prefix">Il mese dei piantini per eccellenza è stato</p>
+                <div class="dati__slot-machine" id="slot-machine">
+                  <div class="dati__slot-reel" id="slot-reel"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 — Per cosa ho pianto? -->
+      <div class="dati__item">
+        <button class="dati__item-toggle" aria-expanded="false">
+          <span class="dati__item-title">Per cosa ho pianto?</span>
+          <span class="dati__item-icon" aria-hidden="true"></span>
+        </button>
+        <div class="dati__item-body">
+          <div class="dati__item-inner">
+            <div class="dati__item-content" id="dati-donut">
+              <div class="dati__donut-wrap">
+                <svg class="dati__donut-chart" id="donut-chart-svg"
+                     viewBox="0 0 300 300" role="img" aria-label="Cause dei piantini"></svg>
+                <div class="dati__donut-legend" id="donut-legend"></div>
+              </div>
+              <p class="dati__comment" id="donut-comment"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 — Con quanto trasporto ho pianto? -->
+      <div class="dati__item">
+        <button class="dati__item-toggle" aria-expanded="false">
+          <span class="dati__item-title">Con quanto trasporto ho pianto?</span>
+          <span class="dati__item-icon" aria-hidden="true"></span>
+        </button>
+        <div class="dati__item-body">
+          <div class="dati__item-inner">
+            <div class="dati__item-content" id="dati-line">
+              <svg class="dati__line-chart" id="line-chart-svg"
+                   viewBox="0 0 700 280" role="img" aria-label="Intensità dei piantini nel tempo"></svg>
+              <div class="dati__cal-wrap">
+                <p class="dati__cal-label">Il giorno più memorabile</p>
+                <div class="dati__cal">
+                  <div class="dati__cal-slot" id="cal-day-slot">
+                    <div class="dati__cal-reel" id="cal-day-reel"></div>
+                  </div>
+                  <div class="dati__cal-slot" id="cal-month-slot">
+                    <div class="dati__cal-reel" id="cal-month-reel"></div>
+                  </div>
+                </div>
+              </div>
+              <p class="dati__comment" id="line-comment"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.dati__accordion -->
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
        COME MI LASCIA QUESTO PHD
   ═══════════════════════════════════════════════════ -->
   <section class="section-lascia" id="lascia" aria-label="Come mi lascia questo PhD">
@@ -138,27 +250,14 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════
-       DATA VIZ  (placeholder)
-  ═══════════════════════════════════════════════════ -->
-  <section class="section-placeholder" id="dati" aria-label="Dati">
-    <div class="placeholder__inner">
-      <span class="section-label">I DATI</span>
-      <!-- PLACEHOLDER: inserire visualizzazioni dati del dottorato -->
-      <p class="placeholder__body">
-        Le visualizzazioni dati della ricerca troveranno spazio qui.
-      </p>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════
        ACK CTA  (bridge to ringraziamenti)
   ═══════════════════════════════════════════════════ -->
   <section class="section-ack-cta" id="ack-cta" aria-label="Ringraziamenti">
     <div class="ack-cta__inner">
-      <p class="ack-cta__pre">E poi ci sono le persone che hanno reso possibile tutto questo.</p>
+      <p class="ack-cta__pre">Grazie per aver partecipato al mio Ted Talk, prosegui pure verso:</p>
       <p class="ack-cta__title" aria-hidden="true">I RINGRA-<br>ZIAMENTI</p>
       <a href="ringraziamenti.html" class="ack-cta__link">
-        Leggi i ringraziamenti
+        Ed eccoci qua →
         <span class="ack-cta__arrow" aria-hidden="true">→</span>
       </a>
     </div>
@@ -169,5 +268,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/main.js"></script>
   <script src="js/timeline.js"></script>
+  <script src="js/dati.js"></script>
 </body>
 </html>

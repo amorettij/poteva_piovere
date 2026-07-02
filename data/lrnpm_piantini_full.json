@@ -1,0 +1,592 @@
+[
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "01",
+    "day": "19",
+    "data_self_assessed": "06-01",
+    "intensità": 2,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 5
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "01",
+    "day": "19",
+    "data_self_assessed": "17-01",
+    "intensità": 1,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 2
+  },
+  {
+    "name": "frami",
+    "year": "2024",
+    "month": "01",
+    "day": "24",
+    "data_self_assessed": "20-01",
+    "intensità": 7,
+    "causa": "relazioni-amicali-familiari",
+    "imbarazzo": 1
+  },
+  {
+    "name": "frami",
+    "year": "2024",
+    "month": "01",
+    "day": "25",
+    "data_self_assessed": "24-01",
+    "intensità": 8,
+    "causa": "accademia-lavoro-economia",
+    "imbarazzo": 7
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "01",
+    "day": "28",
+    "data_self_assessed": "27-01",
+    "intensità": 1,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 3
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "01",
+    "day": "28",
+    "data_self_assessed": "28-01",
+    "intensità": 3,
+    "causa": "altro-e-gran-mix",
+    "imbarazzo": 5
+  },
+  {
+    "name": "frami",
+    "year": "2024",
+    "month": "01",
+    "day": "28",
+    "data_self_assessed": "28-01",
+    "intensità": 5,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 0
+  },
+  {
+    "name": "frami",
+    "year": "2024",
+    "month": "01",
+    "day": "29",
+    "data_self_assessed": "29-01",
+    "intensità": 7,
+    "causa": "altro-e-gran-mix",
+    "imbarazzo": 5
+  },
+  {
+    "name": "enrib",
+    "year": "2024",
+    "month": "01",
+    "day": "29",
+    "data_self_assessed": "28-01",
+    "intensità": 7,
+    "causa": "accademia-lavoro-economia",
+    "imbarazzo": 9
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "01",
+    "day": "29",
+    "data_self_assessed": "29-01",
+    "intensità": 2,
+    "causa": "altro-e-gran-mix",
+    "imbarazzo": 0
+  },
+  {
+    "name": "enrib",
+    "year": "2024",
+    "month": "01",
+    "day": "30",
+    "data_self_assessed": "29-01",
+    "intensità": 7,
+    "causa": "contrattempi",
+    "imbarazzo": 0
+  },
+  {
+    "name": "frami",
+    "year": "2024",
+    "month": "02",
+    "day": "03",
+    "data_self_assessed": "02-02",
+    "intensità": 2,
+    "causa": "altro-e-gran-mix",
+    "imbarazzo": 5
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "02",
+    "day": "03",
+    "data_self_assessed": "03-02",
+    "intensità": 1,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 3
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "02",
+    "day": "05",
+    "data_self_assessed": "05-02",
+    "intensità": 2,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 6
+  },
+  {
+    "name": "lucipess",
+    "year": "2024",
+    "month": "02",
+    "day": "06",
+    "data_self_assessed": "06-02",
+    "intensità": 2,
+    "causa": "dolore-fisico-malattia",
+    "imbarazzo": 0
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "02",
+    "day": "16",
+    "data_self_assessed": "09-02",
+    "intensità": 8,
+    "causa": "altro-e-gran-mix",
+    "imbarazzo": 9
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "02",
+    "day": "16",
+    "data_self_assessed": "15-02",
+    "intensità": 2,
+    "causa": "stress-ansia-per-futuro-nostalgia",
+    "imbarazzo": 7
+  },
+  {
+    "name": "lucipess",
+    "year": "2024",
+    "month": "02",
+    "day": "16",
+    "data_self_assessed": "15-02",
+    "intensità": 2,
+    "causa": "stress-ansia-per-futuro-nostalgia",
+    "imbarazzo": 3
+  },
+  {
+    "name": "enrib",
+    "year": "2024",
+    "month": "02",
+    "day": "21",
+    "data_self_assessed": "21-01",
+    "intensità": 8,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 0
+  },
+  {
+    "name": "lucipess",
+    "year": "2024",
+    "month": "02",
+    "day": "21",
+    "data_self_assessed": "21-01",
+    "intensità": 8,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 10
+  },
+  {
+    "name": "frami",
+    "year": "2024",
+    "month": "02",
+    "day": "26",
+    "data_self_assessed": "25-02",
+    "intensità": 3,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 0
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "03",
+    "day": "03",
+    "data_self_assessed": "03-03",
+    "intensità": 3,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 8
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "03",
+    "day": "09",
+    "data_self_assessed": "09-03",
+    "intensità": 1,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 7
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "03",
+    "day": "11",
+    "data_self_assessed": "11-03",
+    "intensità": 2,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 3
+  },
+  {
+    "name": "frami",
+    "year": "2024",
+    "month": "03",
+    "day": "20",
+    "data_self_assessed": "18-03",
+    "intensità": 2,
+    "causa": "relazioni-amicali-familiari",
+    "imbarazzo": 6
+  },
+  {
+    "name": "frami",
+    "year": "2024",
+    "month": "03",
+    "day": "20",
+    "data_self_assessed": "18-03",
+    "intensità": 2,
+    "causa": "accademia-lavoro-economia",
+    "imbarazzo": 6
+  },
+  {
+    "name": "frami",
+    "year": "2024",
+    "month": "03",
+    "day": "20",
+    "data_self_assessed": "19-03",
+    "intensità": 4,
+    "causa": "accademia-lavoro-economia",
+    "imbarazzo": 8
+  },
+  {
+    "name": "frami",
+    "year": "2024",
+    "month": "03",
+    "day": "20",
+    "data_self_assessed": "20-03",
+    "intensità": 6,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 2
+  },
+  {
+    "name": "lucipess",
+    "year": "2024",
+    "month": "03",
+    "day": "20",
+    "data_self_assessed": "18-03",
+    "intensità": 8,
+    "causa": "stress-ansia-per-futuro-nostalgia",
+    "imbarazzo": 0
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "03",
+    "day": "22",
+    "data_self_assessed": "22-03",
+    "intensità": 2,
+    "causa": "stress-ansia-per-futuro-nostalgia",
+    "imbarazzo": 0
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "03",
+    "day": "23",
+    "data_self_assessed": "23-03",
+    "intensità": 2,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 6
+  },
+  {
+    "name": "frami",
+    "year": "2024",
+    "month": "03",
+    "day": "23",
+    "data_self_assessed": "23-03",
+    "intensità": 8,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 0
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "03",
+    "day": "26",
+    "data_self_assessed": "26-02",
+    "intensità": 4,
+    "causa": "accademia-lavoro-economia",
+    "imbarazzo": 5
+  },
+  {
+    "name": "lucipess",
+    "year": "2024",
+    "month": "04",
+    "day": "03",
+    "data_self_assessed": "03-04",
+    "intensità": 4,
+    "causa": "stress-ansia-per-futuro-nostalgia",
+    "imbarazzo": 7
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "04",
+    "day": "03",
+    "data_self_assessed": "27-03",
+    "intensità": 5,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 4
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "04",
+    "day": "03",
+    "data_self_assessed": "31-03",
+    "intensità": 4,
+    "causa": "altro-e-gran-mix",
+    "imbarazzo": 5
+  },
+  {
+    "name": "enrib",
+    "year": "2024",
+    "month": "04",
+    "day": "03",
+    "data_self_assessed": "03-04",
+    "intensità": 9,
+    "causa": "stress-ansia-per-futuro-nostalgia",
+    "imbarazzo": 0
+  },
+  {
+    "name": "enrib",
+    "year": "2024",
+    "month": "04",
+    "day": "03",
+    "data_self_assessed": "03-04",
+    "intensità": 6,
+    "causa": "stress-ansia-per-futuro-nostalgia",
+    "imbarazzo": 4
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "04",
+    "day": "11",
+    "data_self_assessed": "11-04",
+    "intensità": 7,
+    "causa": "altro-e-gran-mix",
+    "imbarazzo": 0
+  },
+  {
+    "name": "lucipess",
+    "year": "2024",
+    "month": "04",
+    "day": "25",
+    "data_self_assessed": "25-04",
+    "intensità": 5,
+    "causa": "altro-e-gran-mix",
+    "imbarazzo": 0
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "04",
+    "day": "25",
+    "data_self_assessed": "25-04",
+    "intensità": 2,
+    "causa": "altro-e-gran-mix",
+    "imbarazzo": 5
+  },
+  {
+    "name": "frami",
+    "year": "2024",
+    "month": "04",
+    "day": "27",
+    "data_self_assessed": "26-04",
+    "intensità": 1,
+    "causa": "dolore-fisico-malattia",
+    "imbarazzo": 0
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "05",
+    "day": "15",
+    "data_self_assessed": "15-05",
+    "intensità": 2,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 7
+  },
+  {
+    "name": "enrib",
+    "year": "2024",
+    "month": "05",
+    "day": "17",
+    "data_self_assessed": "16-05",
+    "intensità": 9,
+    "causa": "dolore-fisico-malattia",
+    "imbarazzo": 0
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "05",
+    "day": "17",
+    "data_self_assessed": "15-05",
+    "intensità": 2,
+    "causa": "relazioni-amicali-familiari",
+    "imbarazzo": 7
+  },
+  {
+    "name": "frami",
+    "year": "2024",
+    "month": "05",
+    "day": "17",
+    "data_self_assessed": "13-05",
+    "intensità": 2,
+    "causa": "stress-ansia-per-futuro-nostalgia",
+    "imbarazzo": 3
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "05",
+    "day": "26",
+    "data_self_assessed": "26-05",
+    "intensità": 4,
+    "causa": "relazioni-amicali-familiari",
+    "imbarazzo": 0
+  },
+  {
+    "name": "lucipess",
+    "year": "2024",
+    "month": "06",
+    "day": "23",
+    "data_self_assessed": "23-06",
+    "intensità": 7,
+    "causa": "relazioni-amicali-familiari",
+    "imbarazzo": 3
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "07",
+    "day": "06",
+    "data_self_assessed": "30-06",
+    "intensità": 5,
+    "causa": "relazioni-amicali-familiari",
+    "imbarazzo": 4
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "07",
+    "day": "06",
+    "data_self_assessed": "03-07",
+    "intensità": 8,
+    "causa": "contrattempi",
+    "imbarazzo": 4
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "07",
+    "day": "06",
+    "data_self_assessed": "06-07",
+    "intensità": 2,
+    "causa": "audio-video-scritto",
+    "imbarazzo": 5
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "08",
+    "day": "14",
+    "data_self_assessed": "14-08",
+    "intensità": 8,
+    "causa": "relazioni-sessuoaffettive",
+    "imbarazzo": 7
+  },
+  {
+    "name": "pinovale",
+    "year": "2024",
+    "month": "10",
+    "day": "16",
+    "data_self_assessed": "17-09",
+    "intensità": 8,
+    "causa": "relazioni-amicali-familiari",
+    "imbarazzo": 10
+  },
+  {
+    "name": "pinovale",
+    "year": "2024",
+    "month": "10",
+    "day": "16",
+    "data_self_assessed": "12-10",
+    "intensità": 4,
+    "causa": "relazioni-amicali-familiari",
+    "imbarazzo": 2
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "10",
+    "day": "18",
+    "data_self_assessed": "30-06",
+    "intensità": 6,
+    "causa": "relazioni-sessuoaffettive",
+    "imbarazzo": 7
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "10",
+    "day": "18",
+    "data_self_assessed": "14-08",
+    "intensità": 9,
+    "causa": "relazioni-sessuoaffettive",
+    "imbarazzo": 8
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "10",
+    "day": "19",
+    "data_self_assessed": "01-09",
+    "intensità": 8,
+    "causa": "relazioni-sessuoaffettive",
+    "imbarazzo": 9
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "10",
+    "day": "19",
+    "data_self_assessed": "01-09",
+    "intensità": 6,
+    "causa": "relazioni-sessuoaffettive",
+    "imbarazzo": 9
+  },
+  {
+    "name": "arietti",
+    "year": "2024",
+    "month": "10",
+    "day": "19",
+    "data_self_assessed": "10-10",
+    "intensità": 10,
+    "causa": "accademia-lavoro-economia",
+    "imbarazzo": 2
+  }
+]

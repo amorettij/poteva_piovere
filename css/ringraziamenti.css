@@ -8,11 +8,23 @@
 }
 
 .ringraziamenti-intro__text {
-  font-family : var(--f-body);
-  font-size   : clamp(1rem, 1.6vw, 1.25rem);
-  color       : var(--c-text);
-  line-height : 1.65;
-  opacity     : 0.8;
+  font-family  : var(--f-body);
+  font-size    : clamp(1rem, 1.6vw, 1.25rem);
+  color        : var(--c-text);
+  line-height  : 1.65;
+  opacity      : 0.8;
+  margin-bottom: var(--sp-sm);
+}
+
+.ringraziamenti-intro__list {
+  font-family  : var(--f-body);
+  font-size    : clamp(1rem, 1.6vw, 1.25rem);
+  color        : var(--c-text);
+  line-height  : 1.65;
+  opacity      : 0.8;
+  padding-left : 1.5em;
+  margin-bottom: var(--sp-sm);
+  list-style   : disc;
 }
 
 

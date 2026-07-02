@@ -1,90 +1,187 @@
 {
   "_meta": {
-    "group_order": ["Family", "Sorry for Ivan Crew", "Liceo", "Triennale", "Magistrale", "Master"],
-    "note": "Chiave: nome_inizialedelmcognome. Immagini in img/people/. Sostituire i segnaposto con i dati reali."
+    "version": 3,
+    "note": "Immagini derivate automaticamente da img/people/{id}/ tramite data/images.json"
   },
 
-  "mamma_r": {
-    "group": "Family",
-    "image_files": ["mamma_r1"],
-    "quote": "Inserisci qui una citazione.",
-    "ackn_text": "Inserisci qui il testo di ringraziamento per questa persona. Può essere lungo quanto desideri."
-  },
-  "papa_m": {
-    "group": "Family",
-    "image_files": ["papa_m1", "papa_m2"],
-    "quote": "Inserisci qui una citazione.",
-    "ackn_text": "Inserisci qui il testo di ringraziamento per questa persona."
-  },
+  "groups": [
+    {
+      "id": "famiglia",
+      "label": "Famiglia",
+      "security_code": "no",
+      "quote": "",
+      "ackn": "Grazie a chi mi ha dato una famiglia e un supporto incondizionato, a chi mi è stato genitore, ai miei fratelli, e alle mie nonne.\n\nGrazie ai miei genitori, che con ogni probabilità poche ore prima di leggere questo messaggio avranno ricevuto la chiamata di rito in cui mi sarò disperata - come prima di ogni esame. <span style=\"color:var(--c-accent)\">Sergio</span> avrà sdrammatizzato e si sarà distratto poco dopo guardando la televisione, mentre <span style=\"color:var(--c-accent)\">Cristina</span> mi avrà detto che comunque male che vada non è che qualcuno possa farmi fisicamente del male se sbaglio qualcosa, e che quindi a questo punto tanto vale provare. Grazie per aver svolto questo ruolo negli ultimi 10-15 anni, siete stati incredibili.\n\nGrazie a <span style=\"color:var(--c-accent)\">Matteo</span> e <span style=\"color:var(--c-accent)\">Luca</span>, che nel frattempo sono diventati adulti, per accogliermi a casa ad ogni ritorno e continuare periodicamente a buttare un occhio su cosa sto combinando con il mio futuro. Grazie anche ad <span style=\"color:var(--c-accent)\">Aurora</span> e <span style=\"color:var(--c-accent)\">Giulia</span>, per i gesti di cura, per aver ricordato che non mangio cioccolata ogni volta che hanno fatto un dolce, per aver difeso - nei limiti del possibile - il mio cibo da mio padre.\n\nGrazie soprattutto a <span style=\"color:var(--c-accent)\">Mario</span> e <span style=\"color:var(--c-accent)\">Franca</span>, a cui devo tutto, per la loro dedizione totale e per tutte le cose che contano, molto prima e molto al di là di questo dottorato.\n\nSono stata incredibilmente fortunata."
+    },
+    {
+      "id": "liceo",
+      "label": "Liceo",
+      "security_code": "no",
+      "quote": "",
+      "ackn": "",
+      "members": [
+        "agnese_b", "alessandro_s", "alessia_g", "alice_br",
+        "francesco_b", "gaia_r", "giovanni_s", "laura_c", "marta_m", "mattia_v"
+      ]
+    },
+    {
+      "id": "chester_squad",
+      "label": "Chester Squad",
+      "security_code": "no",
+      "quote": "",
+      "ackn": ""
+    },
+    {
+      "id": "antro",
+      "label": "Antro",
+      "security_code": "no",
+      "quote": "",
+      "ackn": "",
+      "members": ["amalia_c", "jona_t", "veronica_z"]
+    },
+    {
+      "id": "dhdk_2019",
+      "label": "DHDK 2019",
+      "security_code": "no",
+      "quote": "",
+      "ackn": "",
+      "members": ["alessia_c", "amanda_c", "elena_c", "giulia_ma", "giulia_mo", "nooshin_s"]
+    },
+    {
+      "id": "interreign",
+      "label": "Interreign",
+      "security_code": "no",
+      "quote": "",
+      "ackn": "",
+      "members": ["chiara_r", "diego_m", "glenda_p", "luca_g"]
+    },
+    {
+      "id": "sorry_for_ivan",
+      "label": "Sorry for Ivan",
+      "security_code": "no",
+      "quote": "",
+      "ackn": "",
+      "members": [
+        "alice_bo", "andrea_s", "arcangelo_m", "chiara_d", "elia_r",
+        "erica_a", "francesca_c", "gianmarco_s", "ivan_h",
+        "lorenzo_pa", "luisa_a", "mario_p", "matteo_g", "remo_g", "sebastian_b", "stefano_d"
+      ],
+      "subgroups": [
+        {
+          "id": "le_ragazze_non_piangono_mai",
+          "label": "Le ragazze non piangono mai",
+          "security_code": "yes",
+          "redirect_on_unlock": "lrnpm.html",
+          "quote": "",
+          "ackn": "",
+          "protected_section": {
+            "salt": "UBQ26mPVxhgU7Y6LpEvWMA==",
+            "iv":   "ZY/E2/lbzGWIcFcN",
+            "ct":   "Rd8M5Zorj/Q5X0gvjX9+byuWMEFh1uTAFytg7XYJ6kLnlVCpCMkJY3SQd6W6xCu0LyovXiCa/eIL4CQ+NXv3M7xU9tQ/fZv3+CV1lek="
+          },
+          "members": ["enrica_b", "giulia_r", "lucia_g", "maria_francesca_b", "valentina_p"]
+        }
+      ]
+    },
+    {
+      "id": "master",
+      "label": "Master",
+      "security_code": "no",
+      "quote": "",
+      "ackn": "",
+      "members": ["francesca_b", "irene_c", "mirko_r", "pierluigi_i", "riccardo_g"]
+    },
+    {
+      "id": "non_precedentemente_raggruppati",
+      "label": "Non precedentemente raggruppati",
+      "security_code": "no",
+      "quote": "",
+      "ackn": "",
+      "members": [
+        "agnese_c", "barbara_t", "benedetta_p", "chiara_m",
+        "claudia_a", "claudia_d", "fabrizio_m", "filippo_o", "francesca_f", "francesca_t", "francesco_m", "kristel_m",
+        "lorenzo_b", "lorenzo_pe", "luana_t", "lucia_l", "ludovica",
+        "madeleine_d", "martina_c", "silvio_p", "sofia_a"
+      ]
+    }
+  ],
 
-  "ivan_r": {
-    "group": "Sorry for Ivan Crew",
-    "image_files": ["ivan_r1"],
-    "quote": "Inserisci qui una citazione.",
-    "ackn_text": "Inserisci qui il testo di ringraziamento per Ivan."
-  },
-  "marco_b": {
-    "group": "Sorry for Ivan Crew",
-    "image_files": ["marco_b1", "marco_b2"],
-    "quote": "Inserisci qui una citazione.",
-    "ackn_text": "Inserisci qui il testo di ringraziamento."
-  },
-  "sara_v": {
-    "group": "Sorry for Ivan Crew",
-    "image_files": ["sara_v1"],
-    "quote": "Inserisci qui una citazione.",
-    "ackn_text": "Inserisci qui il testo di ringraziamento."
-  },
+  "people": {
+    "agnese_b":          { "display": "Agnese B.",          "quote": "Questa mi sembra una scelta da adulti", "ackn": "" },
+    "alessandro_s":      { "display": "Alessandro S.",      "quote": "Troverò sicuramente una citazione nei prossimi giorni", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "alessia_g":         { "display": "Alessia G.",         "quote": "Troverò sicuramente una citazione nei prossimi giorni", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "alice_br":          { "display": "Alice B.",           "quote": "Secondo me non siamo in forma - adesso meno che mai - però lo nascondiamo bene. Ti dirò che visto da fuori sembra... sembra diverso", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "francesco_b":       { "display": "Francesco B.",       "quote": "Attenzione, reato di maschio performativo qui eh", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "gaia_r":            { "display": "Gaia R.",            "quote": "Purtroppo ho fatto una serie di scelte poco condivisibili", "ackn": "" },
+    "giovanni_s":        { "display": "Giovanni S.",        "quote": "biologia? non me squarto", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "laura_c":           { "display": "Laura C.",           "quote": "ti ho già detto del mio piano malvagio?", "ackn": "" },
+    "marta_m":           { "display": "Marta M.",           "quote": "e comunque è un passo più vicino all'obiettivo del monolocale", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "mattia_v":          { "display": "Mattia V.",          "quote": "non so se lo sai ma sono un uomo oberato", "ackn": "" },
 
-  "chiara_m": {
-    "group": "Liceo",
-    "image_files": ["chiara_m1"],
-    "quote": "Inserisci qui una citazione.",
-    "ackn_text": "Inserisci qui il testo di ringraziamento."
-  },
-  "luca_f": {
-    "group": "Liceo",
-    "image_files": ["luca_f1", "luca_f2"],
-    "quote": "Inserisci qui una citazione.",
-    "ackn_text": "Inserisci qui il testo di ringraziamento."
-  },
+    "amalia_c":          { "display": "Amalia C.",          "quote": "Gli elfi sono esseri superiori. Non dire cattiverie sugli elfi", "ackn": "Cara Amalia, questo percorso se non fosse stato per te non l'avrei mai cominciato. Alla fine della triennale non avevo idea di cosa avrei fatto, e quando mi hai consigliato la magistrale di Digital Humanities mi sono iscritta senza leggere il programma. Credo che questo aneddoto sia piuttosto significativo della motivatamente scarza fiducia che ho imparato a riporre sulla mia capacità di prendere decisioni per me stessa, ma soprattutto di quanto io abbia un'alta stima della tua capacità di prendere decisioni in generale. Grazie per la dedizione alle cause più disperate (e.g., io nel biennio 2020-2021) e per riuscire sempre ad essere comprensiva, concreta, curiosa, e una delle poche persone che ascoltano effettivamente i consigli che chiedono. Sei una donna fortissima e una ricercatrice incredibile, ed è stato molto bello negli anni verdertelo scoprire." },
+    "jona_t":            { "display": "Jona T.",            "quote": "", "ackn": "Grazie alla mia prima amica dell'università, fattualmente appena più grande di me, ma che in qualche modo aveva già vissuto svariate vite quando eravamo appena ventenni. Non è da tutti sparire dalla società in cui si è stati per anni, ricrearne una nel posto più improbabile nei confini di questo Paese, e con la stessa naturalezza riapparire su questi schermi dopo anni. È bello vederti cambiare, provare tutto con il tuo inesauribile entusiasmo, e a sorpresa saperti di nuovo qui. Scusa per quando al compleanno dei 30 anni di Simone mi sono addormentata ubriaca e non ho sentito il campanello. A volte ci ripenso e mi sento ancora in colpa. Speriamo di bere ancora molto insieme ma con suonerie del telefono più alte e i due spicci di decenza che questi dieci anni spero mi abbiano conferito." },
+    "veronica_z":        { "display": "Veronica Z.",        "quote": "Che ti devo dire? la mia vita assomiglia sempre più ad una telenovela sudamericana", "ackn": "Ed eccoci qua, vecchia roccia. Contro ogni aspettative, vive e intere alla soglia dei 30 anni. In questi dieci anni sei stata una splendida coinquilina e amica, terribilmente divertente sia da cosciente che negli incredibili dialoghi notturni che ascoltavo con grande interesse e attenzione da sotto il soppalco quando pensavo ancora che studiare di notte fosse un investimento sensato. Grazie Zavattonica per aver riso con me nei momenti più grotteschi delle nostre vite, per essere tornata con la stessa naturalezza dopo un giorno o sei mesi in tutto questo tempo. Spero di condividere con te altre cento gioie e major issues con la stessa ironia di cui sei stata sempre capace. Se non fosse ancora più cringe di quello che ho già scritto direi qualcosa tipo \"quanta resilienza!\" ma mi pare di aver già dato, quindi ti mando un abbraccio e spero di vederti presto. Manda foto del marchio della Volkswagen quando diventerà una cicatrice." },
 
-  "sofia_b": {
-    "group": "Triennale",
-    "image_files": ["sofia_b1"],
-    "quote": "Inserisci qui una citazione.",
-    "ackn_text": "Inserisci qui il testo di ringraziamento."
-  },
-  "matteo_c": {
-    "group": "Triennale",
-    "image_files": ["matteo_c1"],
-    "quote": "Inserisci qui una citazione.",
-    "ackn_text": "Inserisci qui il testo di ringraziamento."
-  },
+    "chiara_r":          { "display": "Chiara R.",          "quote": "Ecco assicuriamoci che sia un synth prima di comprarlo", "ackn": "Rauziken, gocciola extradark, donna di poche parole ma di grandissime parole crociate e di San Biagi d'emergenza dopo mesi di lavoro (ormai imperdonabilmente in città diverse). Grazie per la tua ospitalità, il supporto morale, la scoperta dell'omino rosa e la solidissima collaborazione nell'organizzazione delle duecento lauree (prevalentemente non nostre) che ci hanno portate fino a qui. Ti penso sempre quando finisce il caffè, quando ascolto Nostro Signore Stefano Nazzi e anche quando maneggio dei coltelli molto affilati." },
+    "diego_m":           { "display": "Diego M.",           "quote": "Io tendenzialmente sono per procrastinare tutto ma non le vacanze", "ackn": "Grazie al campione che mi ha insegnato a far finta di programmare usando Claude, ma soprattutto a santificare le ferie. Avido recettore di parole crociate altrui, insofferente uomo da spiaggia, opinionista scomodo capace di prevedere il futuro, ero dell'autoinvito: nessuno come te è riuscito a portare nella mia vita un perfetto balance tra offese e supporto morale. Grazie per aver preso un giorno di ferie per essere qua prima ancora che io credessi di arrivare non fredda a questo giorno." },
+    "glenda_p":          { "display": "Glenda P.",          "quote": "Porto supporto morale (poco perché non è il mio forte) e focaccia (tanta perché fa da supporto morale al posto mio)", "ackn": "Carissima gocciola extradark, mi sto ancora riprendendo dalla tua prematura partenza da questi schermi, ma resto felice di saperti in Liguria e non in Toscana, in mezzo agli uomini con le palpebre calate e l'aria da toxic redenti che finalmente ci meritiamo. Grazie per aver imparato a capirmi quando parlo e anche per la focaccia: l'affetto che provo nei tuoi confronti è direttamente proporzionale alla quantità di olio che ho ingerito con te e inversamente proporzionale alla cordialità con cui ci sono stati dati dei fazzoletti per pulirci le mani." },
+    "luca_g":            { "display": "Luca G.",            "quote": "Inizio a pensare che l'università abbia negli anni mantenuto la sua capacità di radicalizzazione. Solo che negli anni '70 lo faceva tramite l'analisi sociale e filosofica, adesso lo fa buttandoti nella fossa direttamente così che trai da solo le tue conclusioni", "ackn": "Capo, compagno autista, abbiamo finito pure sta faccenda. Essendo arrivato a ogni step di questo pazzo percorso accademico prima di me, posso oggi ringraziarti per i consigli che non sono riuscita a seguire, per gli insulti di conforto, per aver sempre srammatizzato e avermi dato del clown quando ne avevo più bisogno. Inoltre, grazie per aver messo Battiato in una percentuale accettabile delle volte in cui l'ho richiesto, per avermi portata in dei posti magici come Antichità (dove ho con successo accorciato la mia prospettiva di vita di un paio di mesi), e per essere rimasto uno dei miei punti saldi in questa città. Vederti radicalizzare in questi anni mi ha scaldato il cuore: sei chiaramente entrato nella tua dimensione. Sono molto orgogliosa di te, e all'occorrenza sarei pronta a venirti a portare una lametta quando dovessi entrare in regime di detenzione.\n\nInfine, non posso che ringraziarti per aver esternato il tuo rancore per la submission a mezzanotte in metro a Milano solo dopo il suo compimento. So che hai fatto uno sforzo non indifferente e lo prendo come un gesto di affetto: grazie per non aver ingigantito né drammatizzato.\n\nAd oggi posso dire con orgoglio e commozione che non sei così male." },
 
-  "giulia_p": {
-    "group": "Magistrale",
-    "image_files": ["giulia_p1"],
-    "quote": "Inserisci qui una citazione.",
-    "ackn_text": "Inserisci qui il testo di ringraziamento."
-  },
-  "andrea_t": {
-    "group": "Magistrale",
-    "image_files": ["andrea_t1", "andrea_t2"],
-    "quote": "Inserisci qui una citazione.",
-    "ackn_text": "Inserisci qui il testo di ringraziamento."
-  },
+    "alessia_c":         { "display": "Alessia C.",         "quote": "", "ackn": "" },
+    "amanda_c":          { "display": "Amanda C.",          "quote": "Il piano è sempre quello di ritirarsi verso i 50 per scrivere romanzi erotici", "ackn": "" },
+    "elena_c":           { "display": "Elena C.",           "quote": "Io ti vorrei sempre felice e spumeggiante a fare disegnini e correre sui roller", "ackn": "" },
+    "giulia_ma":         { "display": "Giulia Ma.",         "quote": "Troverò sicuramente una citazione nei prossimi giorni", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "giulia_mo":         { "display": "Giulia Mo.",         "quote": "Troverò sicuramente una citazione nei prossimi giorni", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "nooshin_s":         { "display": "Nooshin S.",         "quote": "Good description of the phd, \"frustrating and long and whoah that's it\"", "ackn": "Thank you to one of the kindest, sweetest, and most talented people I have ever met. I am deeply grateful that you chose me as a friend, that you took on the burden of sitting exams with me, and that you continue to put active care into this relationship even now that we live far apart. It is always wonderful to share with you the enormous doubts about our ability to navigate the world, and the resigned approach to coping mechanisms we have developed over the years — but above all, it is wonderful to see you happy with that remarkable person that is Alain." },
 
-  "elena_r": {
-    "group": "Master",
-    "image_files": ["elena_r1"],
-    "quote": "Inserisci qui una citazione.",
-    "ackn_text": "Inserisci qui il testo di ringraziamento."
-  },
-  "davide_s": {
-    "group": "Master",
-    "image_files": ["davide_s1"],
-    "quote": "Inserisci qui una citazione.",
-    "ackn_text": "Inserisci qui il testo di ringraziamento."
+    "alice_bo":          { "display": "Alice B.",           "quote": "Ogni volta puntuale, ogni volta sbaglio", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "andrea_s":          { "display": "Andrea S.",          "quote": "Well I spoke to Arianna after a sleep deprivation trip of 18 hours on three cigarettes, a gin lemon and a piece of vegetarian focaccia, we are not the same", "ackn": "Caro Andrea,\n\nCompagno Pinolo, inesauribile fonte di genio e sregolatezza, amplificatore della mia neurodivergenza: chissà cosa sarebbe stato questo dottorato senza di te? Se chiudo gli occhi posso percepirti sgranare gli occhi e chiamare qualcuno \"frate\". E realisticamente posso anche se li apro, visto che abbiamo passato insieme il 95% del tempo nell'ultimo anno. Spero che continui così, perché c'è un enorme bisogno di a_schimmenti nelle vite di tutti noi.\n\nSei una delle persone più generose in cui abbia avuto la fortuna di imbattermi: mi hai nutrita, ti sei ricordato che sono vegetariana, allergica alla cioccolata, e un'instancabile accollo quando chiunque altro l'avrebbe dimenticato, sei intervenuto in mio favore ad ogni momento di cedimento strutturale mio o del mio computer, mi hai dato le tue credenziali di Claude Code mentre subivi un attacco hacker protetto da un colabrodo come scudo. Se non è essere il Mastro Pinolo finale questo, io non so cosa sia.\n\nCon il benestare della Nostra Dea, ti ringrazio per aver reso terribilmente divertente un periodo stressante senza mai stancarti di fare dei periodici check sulla temperatura della mia anima. Grazie a Dio almeno oggi non ci siamo svegliati freddi: mi sarebbe dispiaciuto non festeggiare insieme dopo tutta questa passeggiata a braccetto nella valle dei chiodi." },
+    "arcangelo_m":       { "display": "Arcangelo M.",       "quote": "Avere una vita, a differenza di una morte, è un optional", "ackn": "" },
+    "chiara_d":          { "display": "Chiara D.",          "quote": "Scusate al momento sono a Solarolo e sto per andare al Museo Casa Natale di Laura Pausini legittimamente brilla di Sangiovese prodotto a: Predappio", "ackn": "" },
+    "elia_r":            { "display": "Elia R.",            "quote": "Di questa storia che è un po' romanzo d'avventura, body horror psicologico, ma soprattutto romanzo di formazione", "ackn": "Stupida Nutria, grazie di aver preferito stare qui con quaranta gradi facendo affidamento sul labile sistema di refrigerazione di questo dipartimento, ad ascoltarmi parlare di cose che hai sentito centinaia di volte in cinque anni, quando saresti potuto essere altrove a goderti la tua sudatissima disoccupazione.\n\nGrazie per l'entusiasmo con cui hai accolto ogni iniziativa non lavorativa, per aver scongelato del cibo e preparato gin tonic in condizioni emergenziali, per aver riletto degli articoli non tuoi a due ore dalla scadenza, ed aver saputo distinguere quando era il momento di portare del realismo nei miei programmi da quando invece - essendo ormai troppo tardi per fare scelte razionali - era il caso di dare solo una pacca sulla spalla di incoraggiamento.\n\nDevo tanto al sostegno che ho avuto la fortuna di poter dare per scontato di trovare a casa tua. Insomma, enorme scolopendra, che dire, anche questa è fatta. Ci meritiamo un cinque molto energico e anche qualche gin tonic." },
+    "erica_a":           { "display": "Erica A.",           "quote": "", "ackn": "" },
+    "francesca_c":       { "display": "Francesca C.",       "quote": "No, non mi fermo perché mi aspetta la psicologa. Non lo faccio solo per me, è anche un servizio per tutti voi", "ackn": "" },
+    "gianmarco_s":       { "display": "Gianmarco S.",       "quote": "Questa è sicuramente un'altra perdita di tempo che non posso permettermi ma che farò lo stesso", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "ivan_h":            { "display": "Ivan H.",            "quote": "Se avessi mandato un paper per ogni volta che ho sentito questa frase, oggi sarei Rettore e avrei l'H-index di Chomsky", "ackn": "" },
+    "lorenzo_pa":        { "display": "Lorenzo P.",         "quote": "Allora premesso che non leggo i messaggi nei gruppi ...", "ackn": "" },
+    "mario_p":           { "display": "Mario P.",           "quote": "Comunque devo dire che sono grato di aver fatto l'asilo dalle suore perché mi ha permesso di fare il militare a tre anni", "ackn": "" },
+    "luisa_a":           { "display": "Luisa A.",           "quote": "Troverò sicuramente una citazione nei prossimi giorni", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "matteo_g":          { "display": "Matteo G.",          "quote": "Il doppio \"abbastanza\" nella frase serve a democristianizzarmi ancora di più", "ackn": "" },
+    "remo_g":            { "display": "Remo G.",            "quote": "io — ovviamente sbagliando — avrei messo il link alla treccani", "spid_gate": true, "ackn": "Campione delle stampanti 3D e delle arrotondatrici di angoli delle carte, lettore numero uno di Evangelisti, labilissima soglia dell'attenzione ma altissima efficienza, vecchia roccia, terminator degli alleati nell'organizzazione di dottorati altrui, maestro dell'assurdo, Mario Maccione, occhio allineatore delle mie slide: Grazie, Remo, per essere diventato un po' meno misterioso e criptico per entrare finalmente con spid nei nostri cuori. Vibecodami tutta la Prima Repubblica." },
+    "sebastian_b":       { "display": "Sebastian B.",       "quote": "Digli di prepararmi il cappotto di legno perché mi ha ammazzato", "ackn": "" },
+    "stefano_d":         { "display": "Stefano D.",         "quote": "Oggi risveglio inaspettato. Nel senso che anche oggi è inaspettato che mi svegliassi. Ma è bello stupirsi delle piccole cose", "ackn": "" },
+
+    "enrica_b":          { "display": "Enrica B.",          "quote": "Mamma mia..\n\nMi meritano in poch*, voi sì.", "ackn": "" },
+    "giulia_r":          { "display": "Giulia R.",          "quote": "Come sempre, adoro assistere al drama quando non mi coinvolge", "ackn": "" },
+    "lucia_g":           { "display": "Lucia G.",           "quote": "18.30-40 esco dal dipartimento e posso dispormi in un incrocio qualsiasi per farmi recuperare, possibilmente fra Via Fani e Via Stresa", "ackn": "" },
+    "maria_francesca_b": { "display": "Maria Francesca B.", "quote": "Ma la smettiamo con la retorica che tutti dobbiamo far evolvere la ricerca?!?!?", "ackn": "" },
+    "valentina_p":       { "display": "Valentina P.",       "quote": "Gli odiatori diranno 'Cringe', io risponderò 'Britney'", "ackn": "" },
+
+    "francesca_b":       { "display": "Francesca B.",       "quote": "", "ackn": "" },
+    "irene_c":           { "display": "Irene C.",           "quote": "", "ackn": "" },
+    "mirko_r":           { "display": "Mirko R.",           "quote": "", "ackn": "" },
+    "pierluigi_i":       { "display": "Pierluigi I.",       "quote": "", "ackn": "" },
+    "riccardo_g":        { "display": "Riccardo G.",        "quote": "", "ackn": "" },
+
+    "agnese_c":          { "display": "Agnese C.",          "quote": "Qua la situazione sta degenerando. Vogliono fare una chiamata tutti insieme ma Carlo ha dimenticato come si chiama su Skype, ti dico solo questo.", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "barbara_t":         { "display": "Barbara T.",         "quote": "Io penso che tu debba semplicemente - passivamente - trascinare la tua carcassa da qui a sei giorni, o perlomeno quello che ne rimane, e ricordare che tutti gli avvenimenti che stanno accadendo sono assolutamente senza senso, senza logica, e anche fuori dal portafoglio di probabilità. Sono sicura che ne rideremo un giorno.", "ackn": "" },
+    "benedetta_p":       { "display": "Benedetta P.",       "quote": "Io e te dobbiamo spettegolare", "ackn": "" },
+    "chiara_m":          { "display": "Chiara M.",          "quote": "Sta di fatto che eravamo in diretta e nessuno ha detto assolutamente niente fuori posto, nessuno escluso, e questo è un grande flop", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "claudia_a":         { "display": "Claudia A.",         "quote": "", "ackn": "" },
+    "claudia_d":         { "display": "Claudia D.",         "quote": "Sigarette? Massimo una al giorno, però con quella devi proprio farci sesso", "ackn": "" },
+    "fabrizio_m":        { "display": "Fabrizio M.",        "quote": "A volte ci trovi anche più sobri di così", "ackn": "" },
+    "filippo_o":         { "display": "Filippo O.",         "quote": "", "ackn": "" },
+    "francesca_t":       { "display": "Francesca T.",       "quote": "", "ackn": "" },
+    "kristel_m":         { "display": "Kristel M.",         "quote": "Troverò sicuramente una citazione nei prossimi giorni", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "francesca_f":       { "display": "Francesca F.",       "quote": "Troverò sicuramente una citazione nei prossimi giorni", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "francesco_m":       { "display": "Francesco M.",       "quote": "Ma sì, in caso il dottorato te lo confermano postumo per pena. Un po' come hanno fatto con me.", "ackn": "Dott. Avv. e recentemente anche PhD, è un piacere averti qui stasera (nel caso in cui tu non sia effettivamente venuto qui stasera e io ti abbia mandato un link successivamente, dirò che in generale è stato un piacere averti conosciuto). A differenza della maggior parte delle altre persone menzionate in questa sede, per te non ho inserito foto, ma immagini che ho trovato in qualche modo rappresentative (in particolare un screenshot di un personaggio che compare per 15 secondi in un'animazione ma che complessivamente mi ha ricordato te in una delle versioni che ho maggiormente esplorato, ovvero con delle eleganti stimmate su almeno uno degli arti superiori). Questo perché ci siamo conosciuti relativamente di recente e non avevo molte foto a disposizione, ma anche perché sei l'unico in questa sede ad avere una laurea (e svariati altri titoli) in ambito giuridico e mi sa che sta cosa di usare le foto della gente senza chiedere il permesso è mezza sconsigliata (?). In ogni caso, grazie per tutte le cose che ho googlato in questi mesi, esperienza incredibile, almeno 4.5 stelline su 5. Resta a temperatura > ambiente, sei fortissimo." },
+    "lorenzo_b":         { "display": "Lorenzo B.",         "quote": "Togli l'accento alla fine, c'ho il correttore automatico partenopeo", "ackn": "" },
+    "lorenzo_pe":        { "display": "Lorenzo P.",         "quote": "Troverò sicuramente una citazione nei prossimi giorni", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "luana_t":           { "display": "Luana T.",           "quote": "", "ackn": "" },
+    "lucia_l":           { "display": "Lucia L.",           "quote": "", "ackn": "Grazie alla mia amica Lucia per essere stata una compagna, un'inesauribile fonte di informazioni cinematografiche, detentrice dei più oscuri gossip del mondo dello spettacolo di sinistra, groupie di Nanni Moretti, e solido pilastro di marchigianità nel mondo. Grazie anche per avermi dato un letto su cui dormire, mettendo una pezza sul grande pensiero intrusivo che ho lasciato vincere quest'anno, ovvero l'iscrizione al master a Roma mentre ero in Finlandia e senza un tetto sulla testa sicuro a Bologna. Spero che tra altri dieci anni potremo rifare questa stessa foto ed essere due raggi di sole (quantomeno nell'anima), con problemi nuovi ma comunque sempre più o meno riassumibili in un vocale di otto minuti o in una chiamata di update di tre ore." },
+    "ludovica":          { "display": "Ludovica",           "quote": "Amo, ce l'hai. Vedi? Mentre fai questa cosa devi pensare \"sono una bitch, sono una bitch, sono una bitch\". Ti dà il ritmo. Poi comunque se non ci credi non funziona", "ackn": "" },
+    "madeleine_d":       { "display": "Madeleine D.",       "quote": "Va bene, non serve a niente lamentarsi. Vado a fare un po' di yoga per ricordarmi di non uccidere la gente", "ackn": "" },
+    "martina_c":         { "display": "Martina C.",         "quote": "Troverò sicuramente una citazione nei prossimi giorni", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" },
+    "silvio_p":          { "display": "Silvio P.",          "quote": "", "ackn": "" },
+    "sofia_a":           { "display": "Sofia A.",           "quote": "Troverò sicuramente una citazione nei prossimi giorni", "ackn": "Compilerò senza dubbio questo ringraziamento prima del nostro prossimo incontro xoxo" }
   }
 }

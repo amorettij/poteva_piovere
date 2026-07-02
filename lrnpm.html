@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Le ragazze non piangono mai — i dati del 2024.">
+  <title>Le ragazze non piangono mai — Poteva Piovere</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Shrikhand&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lrnpm.css?v=2">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-nav site-nav--solid" role="banner">
+    <a href="index.html" class="site-nav__logo">POTEVA PIOVERE</a>
+    <a href="ringraziamenti.html" class="site-nav__link">I RINGRAZIAMENTI</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="lrnpm-hero" aria-label="Titolo">
+    <span class="section-label lrnpm-hero__label">2024</span>
+    <h1 class="lrnpm-hero__title">LE RAGAZZE<br>NON PIANGONO<br>MAI (?)</h1>
+  </section>
+
+  <!-- INTRO -->
+  <section class="lrnpm-intro" aria-label="Introduzione">
+    <p class="lrnpm-intro__text">
+      Nel 2024, nasce il progetto "Json dei piantini", a cui avete aderito con amore e trasparenza.
+      È giunto ora il momento di andare a svelare cosa ci dicono i dati. Perché se in linea di massima
+      le ragazze non piangono mai, le ragazze splendide piangono in compagnia.
+    </p>
+
+    <blockquote class="lrnpm-pullquote">
+      <p class="lrnpm-pullquote__text">«non vedo l'ora di tornare a casa e continuare il piantino da dove l'avevo lasciato»</p>
+      <cite class="lrnpm-pullquote__cite">— Lucia G.</cite>
+    </blockquote>
+  </section>
+
+
+  <!-- VIZ 1: Counter -->
+  <section class="lrnpm-section lrnpm-counter" id="viz-counter" aria-label="Quante volte">
+    <h2 class="lrnpm-counter__title">Quanto abbiamo pianto?</h2>
+    <div class="lrnpm-counter__number-wrap">
+      <span class="lrnpm-counter__num" id="lrnpm-counter-num" aria-live="polite">0</span>
+      <span class="lrnpm-counter__unit">volte</span>
+    </div>
+    <p class="lrnpm-counter__caption" id="lrnpm-counter-caption"></p>
+  </section>
+
+  <!-- VIZ 2: Donut chart -->
+  <section class="lrnpm-section lrnpm-donut" id="viz-donut" aria-label="Contributi per persona">
+    <div class="lrnpm-donut__header">
+      <span class="section-label">I DATI</span>
+      <h2 class="lrnpm-donut__title">In che misura?</h2>
+    </div>
+    <div class="lrnpm-donut__wrap">
+      <svg class="lrnpm-donut__svg" id="lrnpm-donut-svg"
+           viewBox="0 0 300 300" role="img" aria-label="Grafico a ciambella dei contributi"></svg>
+      <div class="lrnpm-legend" id="lrnpm-donut-legend"></div>
+    </div>
+  </section>
+
+  <!-- Bridge -->
+  <div class="lrnpm-section lrnpm-bridge" id="viz-bridge" aria-hidden="true">
+    <p class="lrnpm-bridge__text">Certo, non è una gara,<br>ma se lo fosse,<br>questo sarebbe il podio.</p>
+  </div>
+
+  <!-- VIZ 2b: Podium -->
+  <section class="lrnpm-section lrnpm-podium-section" id="viz-podium" aria-label="Podio">
+    <div id="lrnpm-podium" role="list" aria-label="Le prime tre classificate"></div>
+  </section>
+
+  <p class="lrnpm-podium__caveat" id="lrnpm-podium-caveat"></p>
+
+  <!-- VIZ 4: Calendar + line chart -->
+  <section class="lrnpm-section lrnpm-temporal" id="viz-temporal" aria-label="Distribuzione temporale">
+    <div class="lrnpm-temporal__header">
+      <span class="section-label">NEL TEMPO</span>
+      <h2 class="lrnpm-temporal__title">Ma soprattutto, quando abbiamo pianto?</h2>
+    </div>
+    <div class="lrnpm-cal" id="lrnpm-cal" aria-label="Calendario piantini"></div>
+    <p class="lrnpm-cal__detail" id="lrnpm-cal-detail" aria-live="polite"></p>
+    <svg class="lrnpm-line-svg" id="lrnpm-line-svg"
+         viewBox="0 0 680 200" role="img" aria-label="Piantini per mese"></svg>
+    <p class="lrnpm-temporal__comment" id="lrnpm-temporal-comment"></p>
+  </section>
+
+  <!-- VIZ 5: Embarrassment bar chart -->
+  <section class="lrnpm-section lrnpm-vergogna" id="viz-vergogna" aria-label="Livello di imbarazzo">
+    <div class="lrnpm-vergogna__header">
+      <span class="section-label">IMBARAZZO</span>
+      <h2 class="lrnpm-vergogna__title">E ce ne siamo vergognate?</h2>
+    </div>
+    <svg class="lrnpm-vergogna__svg" id="lrnpm-vergogna-svg"
+         viewBox="0 0 520 260" role="img" aria-label="Media imbarazzo per persona"></svg>
+    <p class="lrnpm-vergogna__note">(e comunque non c'era niente da vergognarsi, viste le circostanze)</p>
+  </section>
+
+  <!-- VIZ 6: Stacked bar chart causes -->
+  <section class="lrnpm-section lrnpm-cause" id="viz-cause" aria-label="Cause dei piantini">
+    <div class="lrnpm-cause__header">
+      <span class="section-label">CAUSE</span>
+      <h2 class="lrnpm-cause__title">Cosa ci ha fatto piangere?</h2>
+    </div>
+    <div class="lrnpm-cause__chart-wrap">
+      <svg class="lrnpm-cause__svg" id="lrnpm-cause-svg"
+           viewBox="0 0 680 320" role="img" aria-label="Cause dei piantini per persona"></svg>
+      <div class="lrnpm-cause-legend" id="lrnpm-cause-legend"></div>
+    </div>
+  </section>
+
+  <!-- VIZ 7: Intensity podium -->
+  <section class="lrnpm-section lrnpm-podium-section lrnpm-intensity" id="viz-intensity" aria-label="Intensità media">
+    <div class="lrnpm-intensity__header">
+      <span class="section-label">INTENSITÀ</span>
+      <h2 class="lrnpm-intensity__title">Ma chi ha pianto più intensamente?</h2>
+    </div>
+    <div id="lrnpm-intensity-podium" role="list" aria-label="Podio intensità"></div>
+  </section>
+
+  <!-- Closing phrase 2024 -->
+  <div class="lrnpm-section lrnpm-closing-2024" id="viz-closing">
+    <p class="lrnpm-closing-2024__text">che dire? un'annata incredibile.</p>
+  </div>
+
+  <!-- Ma poi? -->
+  <section class="lrnpm-section lrnpm-mapoi" id="viz-mapoi" aria-label="2025 e oltre">
+
+    <h2 class="lrnpm-mapoi__title">Ma poi?</h2>
+    <p class="lrnpm-mapoi__text">
+      Nel 2025–2026 siamo state meno consistenti e i dati scarseggiano.
+      Ma il 2025 ci ha lasciato un regalo: una new entry!
+    </p>
+
+    <div class="lrnpm-newentry">
+      <div class="lrnpm-newentry__photo" id="lrnpm-newentry-photo"></div>
+      <p class="lrnpm-newentry__name" id="lrnpm-newentry-name">Giulia R.</p>
+    </div>
+
+    <p class="lrnpm-mapoi__caveat">certo, i dati sono pochi, ma da qualcosa bisogna iniziare.</p>
+    <div class="lrnpm-giulia-stats" id="lrnpm-giulia-stats"></div>
+
+    <p class="lrnpm-final-quote">
+      Che questi anni ci regalino solo pianti collettivi.<br>
+      Un abbraccio alle mie commosse winx del cuore
+    </p>
+
+  </section>
+
+  <script src="js/lrnpm.js?v=7"></script>
+</body>
+</html>
