@@ -454,6 +454,7 @@
 /* ── VIZ 7: Intensity podium ────────────────────────── */
 .lrnpm-intensity {
   padding         : var(--sp-xl) var(--gutter) var(--sp-xl);
+  flex-direction  : column;
 }
 
 .lrnpm-intensity__header {
