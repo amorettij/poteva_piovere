@@ -8,7 +8,7 @@
 
   let data;
   try {
-    const res = await fetch('data/people.json?v=45');
+    const res = await fetch('data/people.json?v=47');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
   } catch (err) {
