@@ -415,7 +415,30 @@ function setComment(stats) {
     .map(([m]) => MONTHS_LONG[+m - 1]);
   const label = best.length > 1 ? `${best[0]} e ${best[1]}` : best[0];
   const verb  = best.length > 1 ? 'mesi speciali che sono stati' : 'mese speciale che è stato';
-  el.textContent = `Wow, che ${verb} ${label} (${maxV} piantini).`;
+  let text = `Wow, che ${verb} ${label} (${maxV} piantini).`;
+
+  const emptyMonths = MONTHS_LONG.filter((_, i) => !stats.byMonth[i + 1]);
+  if (emptyMonths.length) {
+    const last = emptyMonths[emptyMonths.length - 1];
+    const rest = emptyMonths.slice(0, -1);
+    const monthList = rest.length ? rest.join(', ') + ' e ' + last : last;
+    text += ` Comunque sembra improbabile che nei mesi di ${monthList} non sia stata versata nemmeno una lacrima. Probabilmente una svista nella registrazione dei dati.`;
+  }
+
+  el.textContent = text;
+}
+
+// ── Cause comment ─────────────────────────────────────────
+function setCauseComment(stats) {
+  const el = document.getElementById('lrnpm-cause-comment');
+  if (!el) return;
+  const sum = (causa) => Object.values(stats.byCausa[causa] || {}).reduce((a, b) => a + b, 0);
+  const tot = stats.total;
+  const y   = sum('accademia-lavoro-economia');
+  const z   = sum('contrattempi');
+  const w   = sum('stress-ansia-per-futuro-nostalgia');
+  const n   = sum('altro-e-gran-mix');
+  el.textContent = `Su ${tot} piantini registrati, ${y} sono stati direttamente causati dal dottorato / lavoro. I ${z} imputabili ai contrattempi non sono necessariamente indipendenti dalla categoria sopracitata, così come i ${w} relativi ad ansia e nostalgia, e - perché no - i ${n} classificati come altro e gran mix. Correlation is not causation, ma manco a fa così.`;
 }
 
 // ── VIZ 5: Embarrassment bar chart ───────────────────────
@@ -805,7 +828,7 @@ async function main() {
         if (id === 'viz-podium')   runPodium(stats, images);
         if (id === 'viz-temporal')  { runCalendar(stats); runLineChart(stats); setComment(stats); }
         if (id === 'viz-vergogna')  runEmbarrassmentChart(stats);
-        if (id === 'viz-cause')      runCauseChart(stats, images);
+        if (id === 'viz-cause')      { runCauseChart(stats, images); setCauseComment(stats); }
         if (id === 'viz-intensity')  runIntensityPodium(stats, images);
         if (id === 'viz-mapoi')      runNewEntry(data2025, images);
       }
