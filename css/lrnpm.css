@@ -736,3 +736,19 @@
   margin     : 2rem auto 0;
   max-width  : 52ch;
 }
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .lrnpm-hero__title {
+    font-size: clamp(1.8rem, 9vw, 3.5rem);
+  }
+  .lrnpm-counter__num {
+    font-size: clamp(4.5rem, 22vw, 8rem);
+  }
+  .lrnpm-counter__unit {
+    font-size: clamp(1.2rem, 5vw, 2rem);
+  }
+  .lrnpm-bridge__text {
+    font-size: clamp(1.3rem, 5.5vw, 2.2rem);
+  }
+}
