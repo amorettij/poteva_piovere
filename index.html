@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="La storia di un dottorato — e delle persone che lo hanno reso possibile.">
   <title>Poteva Piovere</title>
@@ -21,6 +22,11 @@
   </noscript>
 </head>
 <body>
+
+  <!-- INTRO UMBRELLA -->
+  <div class="intro-umbrella" id="intro-umbrella" aria-hidden="true">
+    <img class="intro-umbrella__img" src="img/umbrella_top.png" alt="">
+  </div>
 
   <!-- ═══════════════════════════════════════════════════
        SITE NAV (transparent on hero, solid on scroll)
@@ -231,13 +237,13 @@
 
       <div class="lascia__carousel" role="region" aria-label="Galleria immagini">
         <div class="carousel__stage">
-          <button class="carousel__btn carousel__btn--prev" id="carousel-prev" type="button" aria-label="Immagine precedente">←</button>
+          <button class="carousel__btn carousel__btn--prev" id="carousel-prev" type="button" aria-label="Immagine precedente"><img src="img/umbrella_top.png" alt="" class="carousel__btn-icon carousel__btn-icon--prev"></button>
           <div class="carousel__viewport">
             <div class="carousel__track" id="carousel-track">
               <!-- slides populated by timeline.js -->
             </div>
           </div>
-          <button class="carousel__btn carousel__btn--next" id="carousel-next" type="button" aria-label="Immagine successiva">→</button>
+          <button class="carousel__btn carousel__btn--next" id="carousel-next" type="button" aria-label="Immagine successiva"><img src="img/umbrella_top.png" alt="" class="carousel__btn-icon carousel__btn-icon--next"></button>
         </div>
         <div class="carousel__dots" id="carousel-dots" aria-hidden="true"></div>
       </div>
@@ -269,5 +275,8 @@
   <script src="js/main.js"></script>
   <script src="js/timeline.js"></script>
   <script src="js/dati.js"></script>
+  <button class="back-to-top" id="back-to-top" aria-label="Torna in cima">
+  </button>
+  <script src="js/ui.js"></script>
 </body>
 </html>

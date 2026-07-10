@@ -85,6 +85,17 @@
 .gcarousel__btn--next  { right: var(--sp-sm); }
 .gcarousel__btn[hidden]{ display: none; }
 
+.gcarousel__btn-icon {
+  width      : 70%;
+  height     : 70%;
+  object-fit : contain;
+  opacity    : 0.8;
+  transition : opacity 0.2s;
+}
+.gcarousel__btn:hover .gcarousel__btn-icon { opacity: 1; }
+.gcarousel__btn-icon--prev { transform: rotate(-90deg); }
+.gcarousel__btn-icon--next { transform: rotate(90deg); }
+
 
 /* =====================================================
    GROUP CAROUSEL  (inline, on group page)
@@ -345,6 +356,26 @@
   font-size   : clamp(0.9375rem, 1.5vw, 1.0625rem);
   line-height : 1.7;
   color       : var(--c-text);
+}
+
+.modal-translate-btn {
+  display        : inline-block;
+  margin-top     : var(--sp-sm);
+  padding        : 0.3em 0.8em;
+  background     : transparent;
+  border         : 1.5px solid var(--c-accent);
+  color          : var(--c-accent);
+  font-family    : var(--f-body);
+  font-size      : 0.8rem;
+  font-weight    : 700;
+  letter-spacing : 0.08em;
+  cursor         : pointer;
+  transition     : background-color 0.2s, color 0.2s;
+}
+
+.modal-translate-btn:hover {
+  background : var(--c-accent);
+  color      : var(--c-bg);
 }
 
 

@@ -34,7 +34,7 @@
   try {
     const [res, imgRes] = await Promise.all([
       fetch('data/people.json?v=47'),
-      fetch('data/images.json?v=12')
+      fetch('data/images.json?v=19')
     ]);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data        = await res.json();
@@ -258,7 +258,26 @@
     if (person.spid_gate) {
       renderSpidGate(person, modalText);
     } else {
-      modalText.innerHTML = (person.ackn || '').split('\n').filter(Boolean).map(l => `<p>${l}</p>`).join('');
+      const toParas = str => (str || '').split('\n').filter(Boolean).map(l => `<p>${l}</p>`).join('');
+      const hasTranslation = !!(person.ackn_en && person.ackn_en.trim());
+      if (hasTranslation) {
+        let lang = 'it';
+        const textEl = document.createElement('div');
+        textEl.innerHTML = toParas(person.ackn);
+        const btn = document.createElement('button');
+        btn.className = 'modal-translate-btn';
+        btn.textContent = 'EN';
+        btn.addEventListener('click', () => {
+          lang = lang === 'it' ? 'en' : 'it';
+          btn.textContent = lang === 'it' ? 'EN' : 'IT';
+          textEl.innerHTML = lang === 'it' ? toParas(person.ackn) : toParas(person.ackn_en);
+        });
+        modalText.innerHTML = '';
+        modalText.appendChild(textEl);
+        modalText.appendChild(btn);
+      } else {
+        modalText.innerHTML = toParas(person.ackn);
+      }
     }
 
     const imgs   = (imgManifest[key] ?? []).map(f => `img/people/${key}/${f}`);

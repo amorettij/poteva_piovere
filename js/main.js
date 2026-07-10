@@ -18,12 +18,26 @@ window.addEventListener('scroll', () => {
    ===================================================== */
 
 if (!reducedMotion) {
-  const entryTl = gsap.timeline({ delay: 0.15 });
+  const entryTl = gsap.timeline({ delay: 0.2 });
 
+  /* Umbrella intro: appear → spin twice → pause → disappear → title */
   entryTl
-    .from('.hero__title', {
-      y: 70, opacity: 0, duration: 1.4, ease: 'expo.out',
+    .from('.intro-umbrella__img', {
+      opacity: 0, scale: 0.3, duration: 0.5, ease: 'back.out(1.7)',
     })
+    .to('.intro-umbrella__img', {
+      rotation: 720, duration: 1.3, ease: 'power2.inOut',
+    })
+    .to('.intro-umbrella__img', {
+      scale: 2.2, duration: 0.4, ease: 'power2.out',
+    }, '+=0.4')
+    .to('.intro-umbrella__img', {
+      scale: 0, opacity: 0, duration: 0.3, ease: 'power3.in',
+    })
+    .from('.hero__title', {
+      scale: 0.3, opacity: 0, duration: 1.0, ease: 'expo.out',
+      transformOrigin: 'center center',
+    }, '-=0.05')
     .from('.hero__line', {
       scaleX: 0, transformOrigin: 'left center', duration: 0.7, ease: 'power2.inOut',
     }, '-=0.5')

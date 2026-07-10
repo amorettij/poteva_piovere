@@ -1119,26 +1119,48 @@ a { color: inherit; text-decoration: none; }
 .carousel__btn {
   background     : none;
   border         : 1px solid rgba(242, 237, 230, 0.25);
-  color          : rgba(242, 237, 230, 0.7);
   width          : 44px;
   height         : 44px;
   flex-shrink    : 0;
   cursor         : pointer;
-  font-size      : 1rem;
   display        : flex;
   align-items    : center;
   justify-content: center;
-  transition     : border-color 0.2s, color 0.2s;
+  transition     : border-color 0.2s, opacity 0.2s;
+  padding        : 0;
 }
 
 .carousel__btn:hover {
   border-color : var(--c-accent);
-  color        : var(--c-accent);
 }
 
 .carousel__btn:disabled {
   opacity : 0.25;
   cursor  : default;
+}
+
+.carousel__btn-icon {
+  width  : 70%;
+  height : 70%;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.carousel__btn:hover .carousel__btn-icon {
+  opacity: 1;
+}
+
+.carousel__btn:disabled .carousel__btn-icon {
+  opacity: 0.25;
+}
+
+.carousel__btn-icon--prev {
+  transform: rotate(-90deg);
+}
+
+.carousel__btn-icon--next {
+  transform: rotate(90deg);
 }
 
 .carousel__dots {
@@ -1186,4 +1208,70 @@ a { color: inherit; text-decoration: none; }
   color          : var(--c-accent);
   font-style     : normal;
   display        : block;
+}
+
+
+/* =====================================================
+   BACK TO TOP
+   ===================================================== */
+
+.back-to-top {
+  position        : fixed;
+  bottom          : 1.5rem;
+  right           : 1.5rem;
+  z-index         : 150;
+  width           : 62px;
+  height          : 62px;
+  border-radius   : 50%;
+  border          : none;
+  cursor          : pointer;
+  padding         : 0;
+  background      : url('../img/umbrella_top.png') center / 78% no-repeat var(--c-bg);
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  opacity         : 0;
+  pointer-events  : none;
+  transition      : opacity 0.35s, transform 0.35s;
+  transform       : translateY(20px);
+}
+
+.back-to-top--visible {
+  opacity        : 1;
+  pointer-events : all;
+  transform      : translateY(0);
+}
+
+.back-to-top__arrow {
+  position        : absolute;
+  top             : 50%;
+  left            : 50%;
+  transform       : translate(-50%, -50%);
+  font-size       : 2rem;
+  color           : #ffffff;
+  font-family     : var(--f-body);
+  font-weight     : 900;
+  line-height     : 1;
+  pointer-events  : none;
+  opacity         : 0.5;
+}
+
+
+/* =====================================================
+   INTRO UMBRELLA (homepage)
+   ===================================================== */
+
+.intro-umbrella {
+  position        : fixed;
+  inset           : 0;
+  z-index         : 300;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  pointer-events  : none;
+}
+
+.intro-umbrella__img {
+  width  : 200px;
+  height : 200px;
 }
