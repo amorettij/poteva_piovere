@@ -34,7 +34,7 @@
   try {
     const [res, imgRes] = await Promise.all([
       fetch('data/people.json?v=47'),
-      fetch('data/images.json?v=19')
+      fetch('data/images.json?v=20')
     ]);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data        = await res.json();
