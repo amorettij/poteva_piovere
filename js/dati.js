@@ -10,15 +10,11 @@
   const NS      = 'http://www.w3.org/2000/svg';
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const FULL = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno',
-                'Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
-  const ABBR = ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'];
-
   /* ── State ─────────────────────────────────────────── */
-  let data, total, byMonth, peakIdx, peakName,
+  let data, total, byMonth, peakIdx,
       byCausa, workCount, stressCount, maxIntens,
       peakDay, peakMonthIdx,
-      sortedCause, PALETTE, CAUSA_LABELS;
+      sortedCause, PALETTE;
 
   const donutPaths  = [];
   let   linePathEl  = null;
@@ -73,7 +69,6 @@
       byMonth = Array(12).fill(0);
       data.forEach(d => { byMonth[+d.month - 1]++; });
       peakIdx  = byMonth.indexOf(Math.max(...byMonth));
-      peakName = FULL[peakIdx];
 
       byCausa     = {};
       data.forEach(d => { byCausa[d.causa] = (byCausa[d.causa] || 0) + 1; });
@@ -85,15 +80,6 @@
       peakDay     = +peak.day;
       peakMonthIdx = +peak.month - 1;
 
-      CAUSA_LABELS = {
-        'audio-video-scritto':               'Film, serie e musica',
-        'relazioni-sessuoaffettive':         'Relazioni sentimentali',
-        'altro-e-gran-mix':                  'Altro e gran mix',
-        'relazioni-amicali-familiari':       'Amicizie e famiglia',
-        'stress-ansia-per-futuro-nostalgia': 'Ansia e nostalgia',
-        'accademia-lavoro-economia':         'Dottorato e lavoro',
-        'contrattempi':                      'Contrattempi',
-      };
       PALETTE     = ['#D44B3F','#B83229','#E0806A','#9B2820','#F0A888','#7A1E18','#C4695A'];
       sortedCause = Object.entries(byCausa).sort((a, b) => b[1] - a[1]);
 
@@ -128,6 +114,7 @@
     const cW = W - pL - pR, cH = H - pT - pB;
     const maxV = Math.max(...byMonth);
     const bW = cW / 12, gap = bW * 0.3;
+    const ABBR = PP.t('months_abbr');
 
     [2, 4, 6].forEach(v => {
       const y  = pT + cH - (v / maxV) * cH;
@@ -167,7 +154,9 @@
         'font-size': 10,
         fill: pk ? ACCENT : 'rgba(26,26,26,0.5)',
         'font-weight': pk ? 700 : 400 });
-      lbl.textContent = ABBR[i]; s.appendChild(lbl);
+      lbl.dataset.monthIdx = i;
+      lbl.textContent = ABBR[i];
+      s.appendChild(lbl);
     });
   }
 
@@ -186,12 +175,16 @@
   /* ── VIZ 2b — Slot machine mese ────────────────────── */
   function buildSlotMachine() {
     const reel  = $('slot-reel');
+    reel.innerHTML = '';
+    const FULL = PP.t('months_full');
     const items = [];
-    for (let c = 0; c < 3; c++) FULL.forEach(m => items.push(m));
-    for (let i = 0; i <= peakIdx; i++) items.push(FULL[i]);
-    items.forEach(name => {
+    for (let c = 0; c < 3; c++) FULL.forEach((m, i) => items.push({ name: m, idx: i }));
+    for (let i = 0; i <= peakIdx; i++) items.push({ name: FULL[i], idx: i });
+    items.forEach(({ name, idx }) => {
       const d = document.createElement('div');
-      d.className = 'dati__slot-item'; d.textContent = name;
+      d.className = 'dati__slot-item';
+      d.dataset.monthIdx = idx;
+      d.textContent = name;
       reel.appendChild(d);
     });
   }
@@ -235,13 +228,20 @@
       angle += frac * Math.PI * 2;
     });
 
+    rebuildDonutLegend();
+  }
+
+  function rebuildDonutLegend() {
     const legend = $('donut-legend');
+    if (!legend || !sortedCause) return;
+    legend.innerHTML = '';
+    const labels = PP.t('causa_labels');
     sortedCause.forEach(([causa, count], i) => {
       const item = document.createElement('div');
       item.className = 'dati__legend-item';
       item.innerHTML =
         `<span class="dati__legend-dot" style="background:${PALETTE[i % PALETTE.length]}"></span>` +
-        `<span class="dati__legend-label">${CAUSA_LABELS[causa] || causa}</span>` +
+        `<span class="dati__legend-label">${labels[causa] || causa}</span>` +
         `<span class="dati__legend-count">${count}</span>`;
       legend.appendChild(item);
     });
@@ -257,10 +257,7 @@
   function populateDonutComment() {
     const related = workCount + stressCount;
     const pct     = Math.round(related / total * 100);
-    $('donut-comment').textContent =
-      `Su ${total} piantini registrati, ${workCount} hanno causa diretta nel dottorato o nel lavoro. ` +
-      `A occhio e croce, ${stressCount} piantini per ansia e nostalgia potrebbero non essere totalmente scollegati dalla prospettiva della permanenza nelle terre scandinave o dal suo concretizzarsi. ` +
-      `Anche se apparentemente il restante ${100 - pct}% ci è stato regalato da una complessa serie di concause, i dati a disposizione non sono sufficienti a scongiurare possibili legami causa-effetto tra il verificarsi del piantino e aspetti collaterali del dottorato.`;
+    $('donut-comment').textContent = PP.t('donut_comment', total, workCount, stressCount, pct);
   }
 
   /* ── VIZ 4 — Line chart ────────────────────────────── */
@@ -270,6 +267,7 @@
     const cW = W - pL - pR, cH = H - pT - pB;
     const t0 = new Date(2024, 0, 1).getTime();
     const t1 = new Date(2024, 9, 31).getTime();
+    const ABBR = PP.t('months_abbr');
 
     const toX = (m, d) => pL + ((new Date(2024, +m - 1, +d).getTime() - t0) / (t1 - t0)) * cW;
     const toY = v => pT + cH - (v / 10) * cH;
@@ -290,7 +288,9 @@
       const t = svgEl('text');
       setAttr(t, { x: toX(m, 15), y: H - 8, 'text-anchor': 'middle',
         'font-size': 10, fill: 'rgba(26,26,26,0.45)' });
-      t.textContent = ABBR[m - 1]; s.appendChild(t);
+      t.dataset.monthIdx = m - 1;
+      t.textContent = ABBR[m - 1];
+      s.appendChild(t);
     }
 
     const pts = [...data]
@@ -334,7 +334,6 @@
 
   /* ── VIZ 4b — Calendario roulette ──────────────────── */
   function buildCalRoulette() {
-    /* Day reel: 1–31 × 2 cycles, then 1 → peakDay */
     const dayReel = $('cal-day-reel');
     const dayNums = [];
     for (let c = 0; c < 2; c++) for (let d = 1; d <= 31; d++) dayNums.push(d);
@@ -346,14 +345,20 @@
       dayReel.appendChild(el);
     });
 
-    /* Month reel: all 12 × 2 cycles, then Jan → peakMonth */
+    rebuildCalMonthReel();
+  }
+
+  function rebuildCalMonthReel() {
+    const FULL      = PP.t('months_full');
     const monthReel = $('cal-month-reel');
+    monthReel.innerHTML = '';
     const monthList = [];
-    for (let c = 0; c < 2; c++) FULL.forEach(m => monthList.push(m));
-    for (let i = 0; i <= peakMonthIdx; i++) monthList.push(FULL[i]);
-    monthList.forEach(name => {
+    for (let c = 0; c < 2; c++) FULL.forEach((m, i) => monthList.push({ name: m, idx: i }));
+    for (let i = 0; i <= peakMonthIdx; i++) monthList.push({ name: FULL[i], idx: i });
+    monthList.forEach(({ name, idx }) => {
       const el = document.createElement('div');
       el.className = 'dati__cal-item';
+      el.dataset.monthIdx = idx;
       el.textContent = name;
       monthReel.appendChild(el);
     });
@@ -390,10 +395,44 @@
   }
 
   function populateLineComment() {
+    const FULL   = PP.t('months_full');
     const dayStr = `${peakDay} ${FULL[peakMonthIdx]}`;
-    $('line-comment').textContent =
-      `Ci sono tanti giorni speciali nell'anno, ma il giorno ${dayStr} deve proprio essere stato memorabile! ` +
-      `Peccato non avere a disposizione i dati dei successivi dieci mesi in Finlandia!`;
+    $('line-comment').textContent = PP.t('line_comment', peakDay, dayStr);
   }
+
+  /* ── Language change ───────────────────────────────── */
+  document.addEventListener('pp:langchange', function () {
+    if (!data) return;
+
+    const ABBR = PP.t('months_abbr');
+    const FULL = PP.t('months_full');
+
+    /* Bar chart month labels */
+    $('bar-chart-svg').querySelectorAll('[data-month-idx]').forEach(el => {
+      el.textContent = ABBR[+el.dataset.monthIdx];
+    });
+
+    /* Line chart month labels */
+    $('line-chart-svg').querySelectorAll('[data-month-idx]').forEach(el => {
+      el.textContent = ABBR[+el.dataset.monthIdx];
+    });
+
+    /* Slot machine: update text in place */
+    $('slot-reel').querySelectorAll('.dati__slot-item').forEach(el => {
+      el.textContent = FULL[+el.dataset.monthIdx];
+    });
+
+    /* Cal roulette month reel: update text in place */
+    $('cal-month-reel').querySelectorAll('.dati__cal-item').forEach(el => {
+      el.textContent = FULL[+el.dataset.monthIdx];
+    });
+
+    /* Donut legend */
+    rebuildDonutLegend();
+
+    /* Comments */
+    if (done.donut === true) populateDonutComment();
+    if (done.line  === true) populateLineComment();
+  });
 
 })();

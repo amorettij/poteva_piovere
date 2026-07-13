@@ -131,6 +131,48 @@ a { color: inherit; text-decoration: none; }
 
 .site-nav__link:hover { color: var(--c-accent); }
 
+.site-nav__right {
+  display     : flex;
+  align-items : center;
+  gap         : var(--sp-md);
+}
+
+.lang-switcher {
+  display     : flex;
+  align-items : center;
+  gap         : 0.35rem;
+}
+
+.lang-btn {
+  font-family    : var(--f-heading);
+  font-size      : 0.625rem;
+  text-transform : uppercase;
+  letter-spacing : 0.2em;
+  background     : none;
+  border         : none;
+  cursor         : pointer;
+  color          : var(--c-text);
+  opacity        : 0.35;
+  padding        : 0;
+  line-height    : 1;
+  transition     : opacity 0.2s, color 0.2s;
+}
+
+.lang-btn[aria-pressed="true"] {
+  color   : var(--c-accent);
+  opacity : 1;
+}
+
+.lang-btn:hover:not([aria-pressed="true"]) { opacity: 0.65; }
+
+.lang-sep {
+  font-family : var(--f-body);
+  font-size   : 0.5rem;
+  color       : var(--c-text);
+  opacity     : 0.2;
+  user-select : none;
+}
+
 
 /* =====================================================
    SHARED UTILITIES

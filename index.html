@@ -33,7 +33,14 @@
   ═══════════════════════════════════════════════════ -->
   <header class="site-nav" id="site-nav" role="banner">
     <a href="index.html" class="site-nav__logo" aria-current="page">POTEVA PIOVERE</a>
-    <a href="ringraziamenti.html" class="site-nav__link">I RINGRAZIAMENTI</a>
+    <div class="site-nav__right">
+      <div class="lang-switcher" role="group" aria-label="Lingua / Language">
+        <button class="lang-btn" data-lang-toggle="it" aria-pressed="true">IT</button>
+        <span class="lang-sep" aria-hidden="true">·</span>
+        <button class="lang-btn" data-lang-toggle="en" aria-pressed="false">EN</button>
+      </div>
+      <a href="ringraziamenti.html" class="site-nav__link" data-i18n="nav_ringraziamenti">I RINGRAZIAMENTI</a>
+    </div>
   </header>
 
   <!-- ═══════════════════════════════════════════════════
@@ -43,10 +50,10 @@
     <div class="hero__inner">
       <h1 class="hero__title">POTEVA<br>PIOVERE</h1>
       <div class="hero__line" aria-hidden="true"></div>
-      <p class="hero__subtitle">Come è andato questo dottorato?<br>(2023-2026)</p>
+      <p class="hero__subtitle" data-i18n-html="hero_subtitle_html">Come è andato questo dottorato?<br>(2023-2026)</p>
     </div>
     <div class="hero__scroll-hint" aria-hidden="true">
-      <span class="hero__scroll-label">scorri</span>
+      <span class="hero__scroll-label" data-i18n="hero_scroll">scorri</span>
       <div class="hero__scroll-line"></div>
     </div>
   </section>
@@ -63,22 +70,22 @@
       </div>
 
       <blockquote class="quote__body" cite="Strappare lungo i bordi, Zerocalcare">
-        <p class="quote__phrase" data-phrase="0">
+        <p class="quote__phrase" data-phrase="0" data-i18n="quote_0">
           «Ogni volta che dico sta cosa poi la mia coscienza in forma d'Armadillo mi dice
         </p>
-        <p class="quote__phrase" data-phrase="1">
+        <p class="quote__phrase" data-phrase="1" data-i18n="quote_1">
           "Guarda, me sa che è peggio annà a lavorà in cantiere, eh. Così, a occhio."
         </p>
-        <p class="quote__phrase" data-phrase="2">
+        <p class="quote__phrase" data-phrase="2" data-i18n="quote_2">
           Sì, è vero, è peggio andà in cantiere, grazie —
         </p>
-        <p class="quote__phrase" data-phrase="3">
+        <p class="quote__phrase" data-phrase="3" data-i18n="quote_3">
           c'è sempre na cosa peggio.
         </p>
-        <p class="quote__phrase" data-phrase="4">
+        <p class="quote__phrase" data-phrase="4" data-i18n="quote_4">
           Però non è che a una che gl'è morto un figlio glie dici
         </p>
-        <p class="quote__phrase quote__phrase--final" data-phrase="5">
+        <p class="quote__phrase quote__phrase--final" data-phrase="5" data-i18n="quote_5">
           "Eh vabbè, alla famiglia Kennedy gliene so' morti quaranta."»
         </p>
       </blockquote>
@@ -104,7 +111,7 @@
   ═══════════════════════════════════════════════════ -->
   <section class="section-timeline" id="timeline" aria-label="Il percorso del dottorato">
     <div class="timeline__inner">
-      <span class="section-label">IL PERCORSO</span>
+      <span class="section-label" data-i18n="section_percorso">IL PERCORSO</span>
       <div class="timeline__list" id="timeline-list" role="list" aria-label="Tappe del dottorato">
         <!-- populated by timeline.js -->
       </div>
@@ -122,13 +129,13 @@
   <section class="section-dati" id="dati" aria-label="Dati statistici">
 
     <div class="dati__intro">
-      <span class="section-label">I DATI</span>
-      <p class="dati__intro-text">
+      <span class="section-label" data-i18n="section_dati">I DATI</span>
+      <p class="dati__intro-text" data-i18n-html="dati_intro_html">
         Nel 2024 — anno centrale di questo percorso — un gruppo scelto di
         <a class="dati__link" href="group.html?group=le_ragazze_non_piangono_mai">ragazze che non piangono mai</a>
         ha raccolto dei preziosi dati statistici sulle volte in cui la regola è stata infranta. Nel rispetto della loro privacy, riporto di seguito solo la parte relativa alla mia personalissima performance.
       </p>
-      <p class="dati__intro-subtext">
+      <p class="dati__intro-subtext" data-i18n-html="dati_subtext_html">
         Se sei membro del gruppo <a class="dati__link" href="lrnpm.html">Le ragazze non piangono mai</a>, prosegui alla pagina dedicata per scoprire classifiche e statistiche di insieme.
       </p>
     </div>
@@ -138,16 +145,16 @@
       <!-- 1 — Quanto ho pianto? -->
       <div class="dati__item">
         <button class="dati__item-toggle" aria-expanded="false">
-          <span class="dati__item-title">Quanto ho pianto?</span>
+          <span class="dati__item-title" data-i18n="dati_q1">Quanto ho pianto?</span>
           <span class="dati__item-icon" aria-hidden="true"></span>
         </button>
         <div class="dati__item-body">
           <div class="dati__item-inner">
             <div class="dati__item-content">
               <div class="dati__counter-panel" id="dati-counter">
-                <p class="dati__question">Dunque, quante volte ho pianto nel 2024?</p>
+                <p class="dati__question" data-i18n="dati_counter_q">Dunque, quante volte ho pianto nel 2024?</p>
                 <p class="dati__counter-number" id="counter-number" aria-live="polite">0</p>
-                <p class="dati__counter-label">volte</p>
+                <p class="dati__counter-label" data-i18n="dati_counter_label">volte</p>
               </div>
             </div>
           </div>
@@ -157,7 +164,7 @@
       <!-- 2 — Quando ho pianto? -->
       <div class="dati__item">
         <button class="dati__item-toggle" aria-expanded="false">
-          <span class="dati__item-title">Quando ho pianto?</span>
+          <span class="dati__item-title" data-i18n="dati_q2">Quando ho pianto?</span>
           <span class="dati__item-icon" aria-hidden="true"></span>
         </button>
         <div class="dati__item-body">
@@ -166,7 +173,7 @@
               <svg class="dati__bar-chart" id="bar-chart-svg"
                    viewBox="0 0 600 260" role="img" aria-label="Piantini per mese 2024"></svg>
               <div class="dati__slot-wrap">
-                <p class="dati__slot-prefix">Il mese dei piantini per eccellenza è stato</p>
+                <p class="dati__slot-prefix" data-i18n="dati_slot_prefix">Il mese dei piantini per eccellenza è stato</p>
                 <div class="dati__slot-machine" id="slot-machine">
                   <div class="dati__slot-reel" id="slot-reel"></div>
                 </div>
@@ -179,7 +186,7 @@
       <!-- 3 — Per cosa ho pianto? -->
       <div class="dati__item">
         <button class="dati__item-toggle" aria-expanded="false">
-          <span class="dati__item-title">Per cosa ho pianto?</span>
+          <span class="dati__item-title" data-i18n="dati_q3">Per cosa ho pianto?</span>
           <span class="dati__item-icon" aria-hidden="true"></span>
         </button>
         <div class="dati__item-body">
@@ -199,7 +206,7 @@
       <!-- 4 — Con quanto trasporto ho pianto? -->
       <div class="dati__item">
         <button class="dati__item-toggle" aria-expanded="false">
-          <span class="dati__item-title">Con quanto trasporto ho pianto?</span>
+          <span class="dati__item-title" data-i18n="dati_q4">Con quanto trasporto ho pianto?</span>
           <span class="dati__item-icon" aria-hidden="true"></span>
         </button>
         <div class="dati__item-body">
@@ -208,7 +215,7 @@
               <svg class="dati__line-chart" id="line-chart-svg"
                    viewBox="0 0 700 280" role="img" aria-label="Intensità dei piantini nel tempo"></svg>
               <div class="dati__cal-wrap">
-                <p class="dati__cal-label">Il giorno più memorabile</p>
+                <p class="dati__cal-label" data-i18n="dati_cal_label">Il giorno più memorabile</p>
                 <div class="dati__cal">
                   <div class="dati__cal-slot" id="cal-day-slot">
                     <div class="dati__cal-reel" id="cal-day-reel"></div>
@@ -260,10 +267,10 @@
   ═══════════════════════════════════════════════════ -->
   <section class="section-ack-cta" id="ack-cta" aria-label="Ringraziamenti">
     <div class="ack-cta__inner">
-      <p class="ack-cta__pre">Grazie per aver partecipato al mio Ted Talk, prosegui pure verso:</p>
-      <p class="ack-cta__title" aria-hidden="true">I RINGRA-<br>ZIAMENTI</p>
+      <p class="ack-cta__pre" data-i18n="ack_pre">Grazie per aver partecipato al mio Ted Talk, prosegui pure verso:</p>
+      <p class="ack-cta__title" aria-hidden="true" data-i18n-html="ack_title_html">I RINGRA-<br>ZIAMENTI</p>
       <a href="ringraziamenti.html" class="ack-cta__link">
-        Ed eccoci qua →
+        <span data-i18n="ack_link">Ed eccoci qua</span>
         <span class="ack-cta__arrow" aria-hidden="true">→</span>
       </a>
     </div>
@@ -272,6 +279,7 @@
   <!-- GSAP via CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/lang.js"></script>
   <script src="js/main.js"></script>
   <script src="js/timeline.js"></script>
   <script src="js/dati.js"></script>

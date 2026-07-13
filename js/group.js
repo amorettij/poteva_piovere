@@ -295,6 +295,7 @@
 
     overlay.setAttribute('aria-hidden', 'false');
     overlay.classList.add('modal-overlay--open');
+    overlay.scrollTop = 0;
     document.body.style.overflow = 'hidden';
     requestAnimationFrame(() => closeBtn.focus());
   }
@@ -308,6 +309,7 @@
   }
 
   closeBtn.addEventListener('click', closeModal);
+  $('modal-close-bottom').addEventListener('click', closeModal);
   overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
 
   document.addEventListener('keydown', e => {

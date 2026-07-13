@@ -8,6 +8,7 @@
     {
       "id": "famiglia",
       "label": "Famiglia",
+      "label_en": "Family",
       "security_code": "no",
       "quote": "",
       "ackn": "Grazie a chi mi ha dato una famiglia e un supporto incondizionato, a chi mi è stato genitore, ai miei fratelli, e alle mie nonne.\n\nGrazie ai miei genitori, che con ogni probabilità poche ore prima di leggere questo messaggio avranno ricevuto la chiamata di rito in cui mi sarò disperata - come prima di ogni esame. <span style=\"color:var(--c-accent)\">Sergio</span> avrà sdrammatizzato e si sarà distratto poco dopo guardando la televisione, mentre <span style=\"color:var(--c-accent)\">Cristina</span> mi avrà detto che comunque male che vada non è che qualcuno possa farmi fisicamente del male se sbaglio qualcosa, e che quindi a questo punto tanto vale provare. Grazie per aver svolto questo ruolo negli ultimi 10-15 anni, siete stati incredibili.\n\nGrazie a <span style=\"color:var(--c-accent)\">Matteo</span> e <span style=\"color:var(--c-accent)\">Luca</span>, che nel frattempo sono diventati adulti, per accogliermi a casa ad ogni ritorno e continuare periodicamente a buttare un occhio su cosa sto combinando con il mio futuro. Grazie anche ad <span style=\"color:var(--c-accent)\">Aurora</span> e <span style=\"color:var(--c-accent)\">Giulia</span>, per i gesti di cura, per aver ricordato che non mangio cioccolata ogni volta che hanno fatto un dolce, per aver difeso - nei limiti del possibile - il mio cibo da mio padre.\n\nGrazie soprattutto a <span style=\"color:var(--c-accent)\">Mario</span> e <span style=\"color:var(--c-accent)\">Franca</span>, a cui devo tutto, per la loro dedizione totale e per tutte le cose che contano, molto prima e molto al di là di questo dottorato.\n\nSono stata incredibilmente fortunata."
@@ -15,6 +16,7 @@
     {
       "id": "liceo",
       "label": "Liceo",
+      "label_en": "High School",
       "security_code": "no",
       "quote": "",
       "ackn": "",
@@ -93,6 +95,7 @@
     {
       "id": "non_precedentemente_raggruppati",
       "label": "Non precedentemente raggruppati",
+      "label_en": "Others",
       "security_code": "no",
       "quote": "",
       "ackn": "",

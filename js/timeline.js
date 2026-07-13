@@ -59,6 +59,20 @@
 
   const list = document.getElementById('timeline-list');
 
+  /* Italian month names used to parse the month strings in timeline.json */
+  const IT_MONTHS = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno',
+                     'Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+
+  function parseMonthStr(str) {
+    const parts = (str || '').trim().split(' ');
+    return { idx: IT_MONTHS.indexOf(parts[0]), year: parts[1] || '' };
+  }
+
+  function localizedMonth(idx, year) {
+    const FULL = (window.PP && window.PP.t) ? window.PP.t('months_full') : IT_MONTHS;
+    return (idx >= 0 ? FULL[idx] : IT_MONTHS[idx] || '') + (year ? ' ' + year : '');
+  }
+
   if (list && data.timeline?.entries) {
     data.timeline.entries.forEach(entry => {
       const item = document.createElement('div');
@@ -88,9 +102,12 @@
       photo.src = entry.photo;
 
       /* Month label */
+      const { idx: mIdx, year: mYear } = parseMonthStr(entry.month);
       const month = document.createElement('span');
       month.className = 'timeline-item__month';
-      month.textContent = entry.month;
+      month.dataset.monthIdx = mIdx;
+      month.dataset.year     = mYear;
+      month.textContent = localizedMonth(mIdx, mYear);
 
       /* Toggle icon */
       const toggle = document.createElement('span');
@@ -110,13 +127,22 @@
 
       const ul = document.createElement('ul');
       ul.className = 'timeline-item__events';
+      ul.dataset.entryId = entry.id;
 
-      entry.events.forEach(text => {
-        const li = document.createElement('li');
-        li.className = 'timeline-item__event';
-        li.textContent = text;
-        ul.appendChild(li);
-      });
+      function fillEvents(ulEl, entryData) {
+        const lang = (window.PP && window.PP.getLang) ? window.PP.getLang() : 'it';
+        const texts = (lang === 'en' && entryData.events_en && entryData.events_en.length)
+          ? entryData.events_en : entryData.events;
+        ulEl.innerHTML = '';
+        texts.forEach(text => {
+          const li = document.createElement('li');
+          li.className = 'timeline-item__event';
+          li.textContent = text;
+          ulEl.appendChild(li);
+        });
+      }
+
+      fillEvents(ul, entry);
 
       bodyInner.appendChild(ul);
       body.appendChild(bodyInner);
@@ -136,7 +162,11 @@
   if (!closing) return;
 
   const labelEl = document.getElementById('lascia-label');
-  if (labelEl) labelEl.textContent = closing.section_label;
+  function updateLasciaLabel() {
+    if (labelEl) labelEl.textContent =
+      (window.PP && window.PP.t) ? window.PP.t('section_lascia') : closing.section_label;
+  }
+  updateLasciaLabel();
 
   /* Carousel */
   const track   = document.getElementById('carousel-track');
@@ -227,5 +257,30 @@
       quoteBlock.hidden = true;
     }
   }
+
+  /* Update month labels, events text, and section title on language switch */
+  document.addEventListener('pp:langchange', function () {
+    if (list) {
+      list.querySelectorAll('.timeline-item__month[data-month-idx]').forEach(el => {
+        el.textContent = localizedMonth(+el.dataset.monthIdx, el.dataset.year);
+      });
+      list.querySelectorAll('.timeline-item__events[data-entry-id]').forEach(ulEl => {
+        const entry = data.timeline.entries.find(e => String(e.id) === ulEl.dataset.entryId);
+        if (entry) {
+          const lang = (window.PP && window.PP.getLang) ? window.PP.getLang() : 'it';
+          const texts = (lang === 'en' && entry.events_en && entry.events_en.length)
+            ? entry.events_en : entry.events;
+          ulEl.innerHTML = '';
+          texts.forEach(text => {
+            const li = document.createElement('li');
+            li.className = 'timeline-item__event';
+            li.textContent = text;
+            ulEl.appendChild(li);
+          });
+        }
+      });
+    }
+    updateLasciaLabel();
+  });
 
 })();

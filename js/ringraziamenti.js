@@ -29,27 +29,46 @@
 
   console.log('[ringraziamenti] gruppi trovati:', data.groups.map(g => g.label));
 
-  const fragment = document.createDocumentFragment();
+  function groupLabel(group) {
+    const lang = (window.PP && window.PP.getLang) ? window.PP.getLang() : 'it';
+    return (lang === 'en' && group.label_en) ? group.label_en : group.label;
+  }
 
-  data.groups.forEach(group => {
-    const count = countMembers(group);
-    const href  = `group.html?group=${encodeURIComponent(group.id)}`;
+  function personCount(count) {
+    if (!count) return '';
+    const lang = (window.PP && window.PP.getLang) ? window.PP.getLang() : 'it';
+    if (lang === 'en') return `${count} ${count === 1 ? 'person' : 'people'}`;
+    return `${count} ${count === 1 ? 'persona' : 'persone'}`;
+  }
 
-    const li = document.createElement('li');
-    li.className = 'groups-list__item';
-    li.innerHTML = `
-      <a href="${href}" class="groups-list__link">
-        <span class="groups-list__name">${escapeHtml(group.label)}</span>
-        <span class="groups-list__right">
-          ${count ? `<span class="groups-list__count">${count} ${count === 1 ? 'persona' : 'persone'}</span>` : ''}
-          <span class="groups-list__arrow" aria-hidden="true">→</span>
-        </span>
-      </a>
-    `;
-    fragment.appendChild(li);
-  });
+  function renderList() {
+    listEl.innerHTML = '';
+    const fragment = document.createDocumentFragment();
 
-  listEl.appendChild(fragment);
+    data.groups.forEach(group => {
+      const count = countMembers(group);
+      const href  = `group.html?group=${encodeURIComponent(group.id)}`;
+
+      const li = document.createElement('li');
+      li.className = 'groups-list__item';
+      li.innerHTML = `
+        <a href="${href}" class="groups-list__link">
+          <span class="groups-list__name">${escapeHtml(groupLabel(group))}</span>
+          <span class="groups-list__right">
+            ${count ? `<span class="groups-list__count">${personCount(count)}</span>` : ''}
+            <span class="groups-list__arrow" aria-hidden="true">→</span>
+          </span>
+        </a>
+      `;
+      fragment.appendChild(li);
+    });
+
+    listEl.appendChild(fragment);
+  }
+
+  renderList();
+
+  document.addEventListener('pp:langchange', renderList);
 
   /* Count all leaf members recursively */
   function countMembers(node) {
