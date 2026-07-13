@@ -307,7 +307,7 @@
       modalCarousel = initCarousel(
         { track: mTrack, dots: $('mcarousel-dots'),
           prev:  mPrev,  next: mNext },
-        imgs, { autoAdvance: false, letterbox: true }
+        imgs, { autoAdvance: true, letterbox: true }
       );
     }
 
