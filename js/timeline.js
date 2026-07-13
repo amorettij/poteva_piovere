@@ -73,6 +73,19 @@
     return (idx >= 0 ? FULL[idx] : IT_MONTHS[idx] || '') + (year ? ' ' + year : '');
   }
 
+  function fillEvents(ulEl, entryData) {
+    const lang = (window.PP && window.PP.getLang) ? window.PP.getLang() : 'it';
+    const texts = (lang === 'en' && entryData.events_en && entryData.events_en.length)
+      ? entryData.events_en : entryData.events;
+    ulEl.innerHTML = '';
+    texts.forEach(text => {
+      const li = document.createElement('li');
+      li.className = 'timeline-item__event';
+      li.textContent = text;
+      ulEl.appendChild(li);
+    });
+  }
+
   if (list && data.timeline?.entries) {
     data.timeline.entries.forEach(entry => {
       const item = document.createElement('div');
@@ -128,19 +141,6 @@
       const ul = document.createElement('ul');
       ul.className = 'timeline-item__events';
       ul.dataset.entryId = entry.id;
-
-      function fillEvents(ulEl, entryData) {
-        const lang = (window.PP && window.PP.getLang) ? window.PP.getLang() : 'it';
-        const texts = (lang === 'en' && entryData.events_en && entryData.events_en.length)
-          ? entryData.events_en : entryData.events;
-        ulEl.innerHTML = '';
-        texts.forEach(text => {
-          const li = document.createElement('li');
-          li.className = 'timeline-item__event';
-          li.textContent = text;
-          ulEl.appendChild(li);
-        });
-      }
 
       fillEvents(ul, entry);
 
