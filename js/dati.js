@@ -259,9 +259,8 @@
     const pct     = Math.round(related / total * 100);
     $('donut-comment').textContent =
       `Su ${total} piantini registrati, ${workCount} hanno causa diretta nel dottorato o nel lavoro. ` +
-      `Aggiungendo i ${stressCount} per ansia e nostalgia — categorie che, in un anno tra Bologna e il nord Europa, ` +
-      `tendono a sovrapporsi — si arriva a ${related} (${pct}% del totale). ` +
-      `Il restante ${100 - pct}% dimostra l'inattaccabile equilibrio emotivo del soggetto nelle altre aree della vita.`;
+      `A occhio e croce, ${stressCount} piantini per ansia e nostalgia potrebbero non essere totalmente scollegati dalla prospettiva della permanenza nelle terre scandinave o dal suo concretizzarsi. ` +
+      `Anche se apparentemente il restante ${100 - pct}% ci è stato regalato da una complessa serie di concause, i dati a disposizione non sono sufficienti a scongiurare possibili legami causa-effetto tra il verificarsi del piantino e aspetti collaterali del dottorato.`;
   }
 
   /* ── VIZ 4 — Line chart ────────────────────────────── */

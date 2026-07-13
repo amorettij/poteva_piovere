@@ -295,14 +295,14 @@
 .modal-overlay--open .modal { transform: translateY(0); }
 
 .modal__close {
-  position        : absolute;
+  position        : fixed;
   top             : var(--sp-sm);
   right           : var(--sp-sm);
-  z-index         : 10;
+  z-index         : 210;
   width           : 2.5rem;
   height          : 2.5rem;
   border          : none;
-  background      : var(--c-text);
+  background      : var(--c-accent);
   color           : var(--c-bg);
   font-size       : 1.25rem;
   cursor          : pointer;
@@ -314,7 +314,7 @@
   line-height     : 1;
 }
 
-.modal__close:hover { background-color: var(--c-accent); }
+.modal__close:hover { background-color: #b83229; }
 
 /* Modal carousel */
 .mcarousel {
