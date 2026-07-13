@@ -72,7 +72,7 @@
       { track: $('gcarousel-track'), dots: $('gcarousel-dots'),
         prev: $('gcarousel-prev'),   next: $('gcarousel-next') },
       groupImgs,
-      { autoAdvance: true, letterbox: true, container: $('group-carousel-section') }
+      { autoAdvance: true, letterbox: true }
     );
   }
 
