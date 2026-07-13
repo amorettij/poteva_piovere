@@ -187,6 +187,16 @@
 
   /* ── Init ────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
+    /* Inject floating language knob */
+    var knob = document.createElement('div');
+    knob.className = 'lang-knob';
+    knob.setAttribute('role', 'group');
+    knob.setAttribute('aria-label', 'Lingua / Language');
+    knob.innerHTML =
+      '<button class="lang-btn" data-lang-toggle="it">IT</button>' +
+      '<button class="lang-btn" data-lang-toggle="en">EN</button>';
+    document.body.appendChild(knob);
+
     document.documentElement.lang = _lang;
     applyTranslations();
     document.querySelectorAll('[data-lang-toggle]').forEach(function (btn) {

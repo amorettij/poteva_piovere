@@ -72,7 +72,7 @@
       { track: $('gcarousel-track'), dots: $('gcarousel-dots'),
         prev: $('gcarousel-prev'),   next: $('gcarousel-next') },
       groupImgs,
-      { autoAdvance: true, letterbox: true }
+      { autoAdvance: true, letterbox: true, container: $('group-carousel-section') }
     );
   }
 
@@ -182,7 +182,7 @@
      ===================================================== */
 
   function initCarousel({ track, dots, prev, next }, images, options = {}) {
-    const { autoAdvance = false, letterbox = false } = options;
+    const { autoAdvance = false, letterbox = false, container = null } = options;
     const total = images.length;
     let current = 0;
     let autoTimer = null;
@@ -209,8 +209,15 @@
       }
     });
 
-    updateControls();
+    /* goTo(0) sets the correct initial transform and button state */
+    goTo(0);
     if (autoAdvance && total > 1) startAuto();
+
+    /* Pause auto-advance while hovering the carousel container */
+    if (container && autoAdvance) {
+      container.addEventListener('mouseenter', () => clearInterval(autoTimer));
+      container.addEventListener('mouseleave', () => { clearInterval(autoTimer); if (total > 1) startAuto(); });
+    }
 
     function goTo(index) {
       current = ((index % total) + total) % total;
@@ -282,14 +289,25 @@
 
     const imgs   = (imgManifest[key] ?? []).map(f => `img/people/${key}/${f}`);
     const stage  = $('mcarousel-stage');
+
+    /* Always reset carousel state from previous modal */
+    const mTrack = $('mcarousel-track');
+    const mPrev  = $('mcarousel-prev');
+    const mNext  = $('mcarousel-next');
+    mTrack.style.transform = '';
+    mTrack.innerHTML = '';
+    if ($('mcarousel-dots')) $('mcarousel-dots').innerHTML = '';
+    if (mPrev) mPrev.hidden = true;
+    if (mNext) mNext.hidden = true;
+
     stage.hidden = imgs.length === 0;
 
     if (imgs.length) {
-      if (!reduced) $('mcarousel-track').style.transition = 'transform 0.35s ease';
+      if (!reduced) mTrack.style.transition = 'transform 0.35s ease';
       modalCarousel = initCarousel(
-        { track: $('mcarousel-track'), dots: $('mcarousel-dots'),
-          prev:  $('mcarousel-prev'),  next: $('mcarousel-next') },
-        imgs, { autoAdvance: true, letterbox: true }
+        { track: mTrack, dots: $('mcarousel-dots'),
+          prev:  mPrev,  next: mNext },
+        imgs, { autoAdvance: false, letterbox: true }
       );
     }
 
