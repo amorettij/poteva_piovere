@@ -304,11 +304,14 @@
 
     if (imgs.length) {
       if (!reduced) mTrack.style.transition = 'transform 0.35s ease';
+      /* Pass prev/next as null — click listeners live outside (no accumulation) */
       modalCarousel = initCarousel(
         { track: mTrack, dots: $('mcarousel-dots'),
-          prev:  mPrev,  next: mNext },
+          prev: null, next: null },
         imgs, { autoAdvance: true, letterbox: true }
       );
+      if (mPrev) mPrev.hidden = imgs.length <= 1;
+      if (mNext) mNext.hidden = imgs.length <= 1;
     }
 
     overlay.setAttribute('aria-hidden', 'false');
@@ -329,6 +332,12 @@
   closeBtn.addEventListener('click', closeModal);
   $('modal-close-bottom').addEventListener('click', closeModal);
   overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+
+  /* Single persistent handlers for modal carousel — avoids listener accumulation */
+  const mPrevBtn = $('mcarousel-prev');
+  const mNextBtn = $('mcarousel-next');
+  if (mPrevBtn) mPrevBtn.addEventListener('click', () => modalCarousel?.prev());
+  if (mNextBtn) mNextBtn.addEventListener('click', () => modalCarousel?.next());
 
   document.addEventListener('keydown', e => {
     if (!overlay.classList.contains('modal-overlay--open')) return;
