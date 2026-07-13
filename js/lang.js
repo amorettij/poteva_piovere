@@ -142,7 +142,7 @@
   };
 
   /* ── State ───────────────────────────────────────── */
-  var _lang = localStorage.getItem('pp_lang') || 'it';
+  var _lang = 'it';
 
   /* ── Public API ──────────────────────────────────── */
   window.PP = window.PP || {};
@@ -160,7 +160,6 @@
   window.PP.setLang = function (lang) {
     if (lang !== 'it' && lang !== 'en') return;
     _lang = lang;
-    localStorage.setItem('pp_lang', lang);
     document.documentElement.lang = lang;
     applyTranslations();
     document.dispatchEvent(new CustomEvent('pp:langchange', { detail: { lang: lang } }));
